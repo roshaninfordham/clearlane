@@ -26,14 +26,14 @@ npm run build
 Or use the package through `npx` after publishing:
 
 ```bash
-npx @clearlane/clearlane-mcp init --client cursor
+npx @roshansharma/clearlane-mcp init --client cursor
 ```
 
 ## Quickstart
 
 ```bash
-npx @clearlane/clearlane-mcp init --client cursor
-npx @clearlane/clearlane-mcp audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
+npx @roshansharma/clearlane-mcp init --client cursor
+npx @roshansharma/clearlane-mcp audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
 ```
 
 Local development:
@@ -50,25 +50,25 @@ node dist/cli/index.js verify-ledger ./output/audit-log.ndjson
 Cursor:
 
 ```bash
-npx @clearlane/clearlane-mcp init --client cursor
+npx @roshansharma/clearlane-mcp init --client cursor
 ```
 
 Codex:
 
 ```bash
-npx @clearlane/clearlane-mcp init --client codex
+npx @roshansharma/clearlane-mcp init --client codex
 ```
 
 OpenCode:
 
 ```bash
-npx @clearlane/clearlane-mcp init --client opencode
+npx @roshansharma/clearlane-mcp init --client opencode
 ```
 
 All clients:
 
 ```bash
-npx @clearlane/clearlane-mcp init --client all
+npx @roshansharma/clearlane-mcp init --client all
 ```
 
 Local MCP configs use:
@@ -148,13 +148,13 @@ Mock M15 output includes 12 segments analyzed, 3 priority bottlenecks, 5.8 mph l
 - Live public dataset schemas may change; ClearLane uses schema-flexible adapters and falls back to mock data when needed.
 - Geo matching is intentionally lightweight for hackathon use.
 - Vision evidence is decision support only and requires human review.
-- The default package scope is `@clearlane`; maintainers should change it if publishing under a different npm organization.
+- The package is published under the maintainer-owned `@roshansharma` npm scope.
 
 ## Publishing
 
 Do not publish unless the repo owner explicitly authorizes it and npm credentials are available.
 
-Maintainer flow:
+Maintainer local flow:
 
 ```bash
 npm login
@@ -167,6 +167,10 @@ npm run pack:dry
 npm run publish:dry
 npm publish --access public
 ```
+
+If npm Trusted Publishing is connected to this GitHub repository, use the `Release`
+workflow from GitHub Actions. The workflow publishes with provenance using GitHub OIDC
+and does not require an `NPM_TOKEN` secret.
 
 ## License
 

@@ -1,5 +1,5 @@
 {
-  "name": "@clearlane/clearlane-mcp",
+  "name": "@roshansharma/clearlane-mcp",
   "version": "0.1.0",
   "description": "Audit-ready bus reliability investigations from MTA, NYC Open Data, 311, and optional vision evidence.",
   "type": "module",
@@ -16,6 +16,14 @@
   "engines": {
     "node": ">=20"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshaninfordham/clearlane.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roshaninfordham/clearlane/issues"
+  },
+  "homepage": "https://github.com/roshaninfordham/clearlane#readme",
   "publishConfig": {
     "access": "public"
   },
