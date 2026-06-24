@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "clearlane": {
+      "type": "local",
+      "command": [
+        "node",
+        "./dist/mcp/server.js"
+      ],
+      "enabled": true
+    }
+  }
+}

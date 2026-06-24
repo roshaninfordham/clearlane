@@ -1,0 +1,72 @@
+{
+  "name": "@clearlane/clearlane-mcp",
+  "version": "0.1.0",
+  "description": "Audit-ready bus reliability investigations from MTA, NYC Open Data, 311, and optional vision evidence.",
+  "type": "module",
+  "bin": {
+    "clearlane": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "examples"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/cli/index.ts",
+    "mcp": "tsx src/mcp/server.ts",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "doctor": "tsx src/cli/index.ts doctor",
+    "demo": "tsx src/cli/index.ts audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output",
+    "verify-ledger": "tsx src/cli/index.ts verify-ledger ./output/audit-log.ndjson",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm test && npm run build && node dist/scripts/prepublish-check.js",
+    "pack:dry": "npm pack --dry-run",
+    "publish:dry": "npm publish --dry-run --access public",
+    "release:public": "npm publish --access public"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "govtech",
+    "civic-tech",
+    "transit",
+    "mta",
+    "nyc-open-data",
+    "audit-log",
+    "bus-reliability"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "commander": "^14.0.2",
+    "dotenv": "^17.2.3",
+    "execa": "^9.6.0",
+    "openai": "^6.8.1",
+    "pdfkit": "^0.17.2",
+    "sharp": "^0.34.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.9.1",
+    "@types/pdfkit": "^0.17.3",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vitest": "^3.2.4"
+  }
+}

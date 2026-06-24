@@ -1,0 +1,16 @@
+.env
+.env.*
+input/
+output/
+.clearlane/cache/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.log
+.DS_Store
+node_modules/
+coverage/
+src/
+tests/
+*.tgz

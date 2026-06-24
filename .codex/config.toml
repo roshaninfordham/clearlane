@@ -1,0 +1,7 @@
+[mcp_servers.clearlane]
+command = "node"
+args = ["./dist/mcp/server.js"]
+enabled = true
+startup_timeout_sec = 20
+tool_timeout_sec = 180
+env_vars = ["OPENAI_API_KEY", "MTA_API_KEY", "NYC_OPEN_DATA_APP_TOKEN"]
