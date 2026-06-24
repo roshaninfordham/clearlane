@@ -1,0 +1,23 @@
+[
+  {
+    "segmentId": "M15-S003",
+    "street": "Allen St",
+    "facility": "Offset bus lane",
+    "direction": "northbound",
+    "notes": "Bus priority treatment near Grand St corridor."
+  },
+  {
+    "segmentId": "M15-S004",
+    "street": "1 Av",
+    "facility": "Bus lane",
+    "direction": "northbound",
+    "notes": "Peak period bus lane context should be verified."
+  },
+  {
+    "segmentId": "M15-S005",
+    "street": "1 Av",
+    "facility": "Bus lane",
+    "direction": "northbound",
+    "notes": "High curb activity and delivery access near E 23 St."
+  }
+]

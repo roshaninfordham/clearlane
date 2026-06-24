@@ -1,0 +1,22 @@
+[
+  {
+    "eventType": "possible_bus_lane_blockage",
+    "vehicleType": "delivery_van",
+    "locationContext": "bus_lane",
+    "description": "Image evidence is consistent with a stopped delivery vehicle occupying curbside bus-priority space near a stop approach. This requires human review.",
+    "confidence": 0.82,
+    "humanReviewRequired": true,
+    "evidencePath": "./output/evidence/analyzed-frame-001.jpg",
+    "source": "mock"
+  },
+  {
+    "eventType": "possible_double_parking",
+    "vehicleType": "box_truck",
+    "locationContext": "curb",
+    "description": "Image evidence is consistent with possible double parking and curbside loading activity near the corridor. This is not an enforcement determination.",
+    "confidence": 0.74,
+    "humanReviewRequired": true,
+    "evidencePath": "./output/evidence/analyzed-frame-002.jpg",
+    "source": "mock"
+  }
+]

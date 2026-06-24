@@ -1,0 +1,21 @@
+{
+  "route": "M15",
+  "borough": "Manhattan",
+  "description": "North-south Manhattan bus corridor serving the East Side, including Water St, Allen St, 1 Av, and 2 Av.",
+  "busLanes": ["Allen St near Grand St", "1 Av from E 14 St to E 34 St", "1 Av northbound segments"],
+  "busStops": [
+    "South Ferry",
+    "Water St / Broad St",
+    "Pearl St / Peck Slip",
+    "Allen St / Grand St",
+    "1 Av / E 14 St",
+    "1 Av / E 23 St",
+    "1 Av / E 34 St",
+    "1 Av / E 42 St",
+    "1 Av / E 57 St",
+    "1 Av / E 68 St",
+    "1 Av / E 79 St",
+    "1 Av / E 96 St",
+    "125 St / 2 Av"
+  ]
+}
