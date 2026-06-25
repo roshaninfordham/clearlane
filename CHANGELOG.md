@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2
+
+- Add `clearlane-mcp` as a CLI alias for the existing `clearlane` command.
+- Document the difference between global install, local project install, and `npx` usage.
+- Clarify why `npm install clearlane-mcp` does not make direct shell commands available unless run through `npx` or `node_modules/.bin`.
+
 ## 0.4.1
 
 - Add system architecture and output-flow Mermaid diagrams directly to the GitHub README landing page.

@@ -102,14 +102,42 @@ Every ClearLane run writes `audit-log.ndjson`, an append-only ledger where each 
 
 ## Installation
 
+The npm package name is `clearlane-mcp`. The CLI command is `clearlane`; starting with `0.4.2`, `clearlane-mcp` is also provided as a command alias.
+
+Global install, recommended for MCP clients:
+
 ```bash
 npm install -g clearlane-mcp
+clearlane --version
+clearlane-mcp --version
 ```
 
-Or use it without a global install:
+One-off use without installing globally:
 
 ```bash
+npx clearlane-mcp --version
 npx clearlane-mcp init --client cursor
+npx clearlane-mcp init --client opencode
+```
+
+Local project install:
+
+```bash
+npm install clearlane-mcp
+npx clearlane --version
+npx clearlane-mcp --version
+./node_modules/.bin/clearlane --version
+```
+
+If you run `npm install clearlane-mcp` without `-g`, do not expect `clearlane` or `clearlane-mcp` to be available as direct shell commands unless `node_modules/.bin` is on your PATH. Use `npx` or `./node_modules/.bin/...`.
+
+If you installed globally and still get `zsh: command not found: clearlane`, your npm global bin directory is not on PATH:
+
+```bash
+npm prefix -g
+ls "$(npm prefix -g)/bin"
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 Local development from this repo:
@@ -176,6 +204,7 @@ Then these should work:
 
 ```bash
 clearlane --version
+clearlane-mcp --version
 clearlane auth status
 clearlane doctor
 clearlane init --client opencode
@@ -185,7 +214,8 @@ Example verified output from a macOS zsh shell:
 
 ```text
 clearlane -> /Users/rs/.npm-global/bin/clearlane
-version -> 0.4.1
+clearlane-mcp -> /Users/rs/.npm-global/bin/clearlane-mcp
+version -> 0.4.2
 MTA_API_KEY -> present via local-file
 NYC_OPEN_DATA_APP_TOKEN -> present via local-file
 ```
