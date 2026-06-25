@@ -12,6 +12,7 @@ import { ArtifactPaths } from "../schemas/artifacts.js";
 import { DataCompleteness, nowIso, Period } from "../schemas/common.js";
 import { Metrics } from "../schemas/metrics.js";
 import { RouteHealth } from "../reports/reportSchemas.js";
+import { CredentialManager } from "../credentials/credentialManager.js";
 import { ClearLaneConfig, loadConfig } from "./config.js";
 import { createLogger, Logger } from "./logger.js";
 import { ensureDir } from "./paths.js";
@@ -40,6 +41,7 @@ export type AuditRunResult = {
 
 export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
   const logger: Logger = createLogger(Boolean(options.verbose));
+  await new CredentialManager().applyToProcessEnv();
   const config = options.config ?? (await loadConfig());
   const outDir = path.resolve(options.outDir);
   const evidenceDir = path.resolve(options.evidenceDir ?? config.evidenceDir);

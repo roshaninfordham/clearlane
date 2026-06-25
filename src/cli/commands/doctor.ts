@@ -1,8 +1,10 @@
 import { pathExists } from "../../core/paths.js";
 import { VERSION } from "../../core/version.js";
+import { CredentialManager, statusForDisplay } from "../../credentials/credentialManager.js";
 import { ffmpegAvailable } from "../../vision/frameExtractor.js";
 
 export async function runDoctorCommand(): Promise<void> {
+  const credentialStatus = await new CredentialManager().status();
   const configFiles = [
     "clearlane.config.json",
     ".cursor/mcp.json",
@@ -14,22 +16,20 @@ export async function runDoctorCommand(): Promise<void> {
     if (await pathExists(file)) found.push(file);
   }
   const issues = [];
-  if (!process.env.NYC_OPEN_DATA_APP_TOKEN) {
+  if (!credentialStatus.credentials.NYC_OPEN_DATA_APP_TOKEN.present) {
     issues.push("NYC Open Data app token missing; anonymous Socrata requests may be throttled.");
   }
-  if (!process.env.OPENAI_API_KEY) {
+  if (!credentialStatus.credentials.OPENAI_API_KEY.present) {
     issues.push("OPENAI_API_KEY missing; vision analysis will be skipped unless --mock is used.");
   }
-  if (!process.env.MTA_API_KEY) {
+  if (!credentialStatus.credentials.MTA_API_KEY.present) {
     issues.push("MTA_API_KEY missing; real-time Bus Time calls will be skipped.");
   }
 
   console.log(`Node version: ${process.version}`);
   console.log(`ClearLane version: ${VERSION}`);
   console.log(`ffmpeg available: ${(await ffmpegAvailable()) ? "yes" : "no"}`);
-  console.log(`OPENAI_API_KEY present: ${process.env.OPENAI_API_KEY ? "yes" : "no"}`);
-  console.log(`MTA_API_KEY present: ${process.env.MTA_API_KEY ? "yes" : "no"}`);
-  console.log(`NYC_OPEN_DATA_APP_TOKEN present: ${process.env.NYC_OPEN_DATA_APP_TOKEN ? "yes" : "no"}`);
+  for (const line of statusForDisplay(credentialStatus)) console.log(line);
   console.log("MCP server can start: yes");
   console.log(`Config files found: ${found.length ? found.join(", ") : "none"}`);
   console.log(`Likely setup issues: ${issues.length ? issues.join(" ") : "none"}`);

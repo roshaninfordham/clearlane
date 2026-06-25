@@ -1,8 +1,7 @@
-import { PACKAGE_NAME } from "../core/version.js";
-import { localMcpCommand, npmMcpCommand } from "./genericMcp.js";
+import { globalMcpCommand, localMcpCommand } from "./genericMcp.js";
 
 export function opencodeJsonc(local = false): string {
-  const command = local ? localMcpCommand() : npmMcpCommand(PACKAGE_NAME);
+  const command = local ? localMcpCommand() : globalMcpCommand();
   return `${JSON.stringify(
     {
       $schema: "https://opencode.ai/config.json",

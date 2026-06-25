@@ -2,7 +2,9 @@
 import "dotenv/config";
 import { Command } from "commander";
 import { runAnalyzeEvidenceCommand } from "./commands/analyzeEvidence.js";
+import { runAuthStatusCommand } from "./commands/authStatus.js";
 import { runAuditCommand } from "./commands/audit.js";
+import { runConfigureCommand } from "./commands/configure.js";
 import { runDoctorCommand } from "./commands/doctor.js";
 import { runInit, InitClient } from "./commands/init.js";
 import { runInspectSourceCommand } from "./commands/inspectSource.js";
@@ -23,15 +25,35 @@ program
   .description("Create ClearLane config and MCP client configuration.")
   .requiredOption("--client <client>", "cursor, codex, opencode, or all")
   .option("--local", "Point MCP config to local dist build instead of npm")
-  .action(async (options: { client: InitClient; local?: boolean }) => {
+  .option("--project", "Write project-level client config")
+  .option("--global", "Write user-level client config where supported")
+  .action(async (options: { client: InitClient; local?: boolean; project?: boolean; global?: boolean }) => {
     const written = await runInit(options);
     console.log("ClearLane initialized.");
     console.log(`Files written: ${written.join(", ")}`);
     console.log("Next steps:");
     console.log("1. Run npm run build if using --local.");
-    console.log("2. Run clearlane doctor.");
-    console.log("3. Run clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output.");
+    console.log("2. Restart your MCP client.");
+    console.log("3. Ask: \"Use ClearLane to audit the M15 route for weekday AM reliability.\"");
+    console.log("4. If live setup is needed, run: clearlane configure");
   });
+
+program
+  .command("configure")
+  .description("Securely configure local ClearLane credentials without pasting secrets into chat.")
+  .option("--env", "Print shell export instructions instead of storing keys")
+  .option("--local-file", "Store keys in the local ClearLane credentials file")
+  .option("--project-env", "Store keys in project .env.local and explicitly enable project env lookup")
+  .option("--reset", "Remove local ClearLane credentials")
+  .option("--show-status", "Show credential status without prompting")
+  .action(runConfigureCommand);
+
+const auth = program.command("auth").description("Manage ClearLane credential status.");
+auth
+  .command("status")
+  .description("Show credential status without exposing values.")
+  .option("--json", "Print machine-readable JSON")
+  .action(runAuthStatusCommand);
 
 program
   .command("mcp")

@@ -7,9 +7,13 @@ import { verifyLedgerFile } from "../src/audit/verify.js";
 import { SocrataClient } from "../src/api/socrataClient.js";
 import { runInit } from "../src/cli/commands/init.js";
 import { runDoctorCommand } from "../src/cli/commands/doctor.js";
+import { runAuthStatusCommand } from "../src/cli/commands/authStatus.js";
 import { runAudit } from "../src/core/runAudit.js";
 import { loadConfig } from "../src/core/config.js";
 import { VisionEvidenceAgent } from "../src/agents/visionEvidenceAgent.js";
+import { CredentialManager } from "../src/credentials/credentialManager.js";
+import { auditRouteTool } from "../src/mcp/tools/auditRoute.js";
+import { createMcpServer } from "../src/mcp/server.js";
 
 const originalCwd = process.cwd();
 const originalEnv = { ...process.env };
@@ -177,8 +181,55 @@ describe("doctor", () => {
     const spy = vi.spyOn(console, "log").mockImplementation(() => undefined);
     await runDoctorCommand();
     const output = spy.mock.calls.map((call) => call.join(" ")).join("\n");
-    expect(output).toContain("OPENAI_API_KEY present: yes");
+    expect(output).toContain("OPENAI_API_KEY: present via environment");
     expect(output).not.toContain("sk-secret-value");
+  });
+});
+
+describe("credential setup", () => {
+  it("auth status never prints secret values", async () => {
+    process.env.CLEARLANE_HOME = await tempDir();
+    process.env.MTA_API_KEY = "mta-secret-value";
+    const spy = vi.spyOn(console, "log").mockImplementation(() => undefined);
+    await runAuthStatusCommand();
+    const output = spy.mock.calls.map((call) => call.join(" ")).join("\n");
+    expect(output).toContain("MTA_API_KEY: present via environment");
+    expect(output).not.toContain("mta-secret-value");
+  });
+
+  it("resolves environment variables before local file credentials", async () => {
+    process.env.CLEARLANE_HOME = await tempDir();
+    const manager = new CredentialManager();
+    await manager.saveLocal({ MTA_API_KEY: "local-value" });
+    process.env.MTA_API_KEY = "env-value";
+    const resolved = await manager.resolveAll();
+    expect(resolved.MTA_API_KEY.source).toBe("environment");
+    expect(resolved.MTA_API_KEY.value).toBe("env-value");
+  });
+});
+
+describe("mcp setup flow", () => {
+  it("returns needs_configuration when live audit credentials are missing", async () => {
+    process.env.CLEARLANE_HOME = await tempDir();
+    delete process.env.MTA_API_KEY;
+    delete process.env.NYC_OPEN_DATA_APP_TOKEN;
+    const result = await auditRouteTool({
+      route: "M15",
+      borough: "Manhattan",
+      period: "weekday_am",
+      outDir: "./output",
+      mock: false
+    });
+    expect(result.status).toBe("needs_configuration");
+    expect(JSON.stringify(result)).toContain("clearlane configure");
+  });
+
+  it("creates an MCP server without credentials", async () => {
+    process.env.CLEARLANE_HOME = await tempDir();
+    delete process.env.MTA_API_KEY;
+    delete process.env.NYC_OPEN_DATA_APP_TOKEN;
+    const server = createMcpServer();
+    expect(server).toBeTruthy();
   });
 });
 

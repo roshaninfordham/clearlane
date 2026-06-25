@@ -16,10 +16,10 @@ export async function writeWithBackup(filePath: string, content: string): Promis
   return backupPath ? { filePath, backupPath } : { filePath };
 }
 
-export function npmMcpCommand(packageName: string): { command: string; args: string[] } {
+export function globalMcpCommand(): { command: string; args: string[] } {
   return {
-    command: "npx",
-    args: ["-y", packageName, "mcp"]
+    command: "clearlane",
+    args: ["mcp"]
   };
 }
 

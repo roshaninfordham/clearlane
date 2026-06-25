@@ -3,12 +3,14 @@ import path from "node:path";
 import { AuditLedger } from "../../audit/ledger.js";
 import { loadConfig } from "../../core/config.js";
 import { VisionEvidenceAgent } from "../../agents/visionEvidenceAgent.js";
+import { CredentialManager } from "../../credentials/credentialManager.js";
 
 export async function runAnalyzeEvidenceCommand(
   evidenceDir: string,
   options: { out?: string; mock?: boolean }
 ): Promise<void> {
   const config = await loadConfig();
+  await new CredentialManager().applyToProcessEnv();
   const outDir = path.resolve(options.out ?? config.outputDir);
   await mkdir(outDir, { recursive: true });
   const ledger = await AuditLedger.open(path.join(outDir, config.audit.ledgerFile));

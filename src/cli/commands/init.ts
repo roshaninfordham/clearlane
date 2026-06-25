@@ -8,7 +8,12 @@ import { defaultConfig } from "../../core/config.js";
 
 export type InitClient = "cursor" | "codex" | "opencode" | "all";
 
-export async function runInit(options: { client: InitClient; local?: boolean }): Promise<string[]> {
+export async function runInit(options: {
+  client: InitClient;
+  local?: boolean;
+  project?: boolean;
+  global?: boolean;
+}): Promise<string[]> {
   await mkdir("input/evidence", { recursive: true });
   await mkdir("output", { recursive: true });
 
@@ -23,17 +28,26 @@ export async function runInit(options: { client: InitClient; local?: boolean }):
     options.client === "all" ? (["cursor", "codex", "opencode"] as const) : [options.client];
   for (const client of clients) {
     if (client === "cursor") {
+      const filePath = options.global
+        ? path.join(process.env.HOME ?? ".", ".cursor", "mcp.json")
+        : path.join(".cursor", "mcp.json");
       written.push(
-        label(await writeWithBackup(path.join(".cursor", "mcp.json"), cursorMcpJson(Boolean(options.local))))
+        label(await writeWithBackup(filePath, cursorMcpJson(Boolean(options.local))))
       );
     }
     if (client === "codex") {
+      const filePath = options.global
+        ? path.join(process.env.HOME ?? ".", ".codex", "config.toml")
+        : path.join(".codex", "config.toml");
       written.push(
-        label(await writeWithBackup(path.join(".codex", "config.toml"), codexConfigToml(Boolean(options.local))))
+        label(await writeWithBackup(filePath, codexConfigToml(Boolean(options.local))))
       );
     }
     if (client === "opencode") {
-      written.push(label(await writeWithBackup("opencode.jsonc", opencodeJsonc(Boolean(options.local)))));
+      const filePath = options.global
+        ? path.join(process.env.HOME ?? ".", ".config", "opencode", "opencode.jsonc")
+        : "opencode.jsonc";
+      written.push(label(await writeWithBackup(filePath, opencodeJsonc(Boolean(options.local)))));
     }
   }
   return written;
