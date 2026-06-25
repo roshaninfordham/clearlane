@@ -91,13 +91,14 @@ clearlane doctor
 ```bash
 clearlane init --client cursor
 clearlane configure
-clearlane audit --route M15 --borough Manhattan --period weekday_am --out ./output
+clearlane ask "Why is the M15 slow during weekday AM reliability?" --out ./output
 ```
 
 Demo mode works with zero API keys:
 
 ```bash
 clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
+clearlane ask "What should DOT and MTA review for the M15 weekday AM corridor?" --mock --out ./output
 ```
 
 Local development:
@@ -143,16 +144,16 @@ node ./dist/mcp/server.js
 
 ## MCP Prompt Example
 
-Use ClearLane MCP to audit the M15 bus route for weekday AM reliability.
+Use ClearLane MCP to answer: why is the M15 bus route slow during weekday AM reliability?
 
 First check ClearLane setup status. If credentials are missing, do not ask me to paste keys here. Tell me to run `clearlane configure` in my terminal. If I do not have keys yet, run the audit in mock mode.
 
-Generate `report.md`, `report.pdf`, `metrics.json`, `route-health.json`, `slow-segments.geojson`, `recommendations.json`, and `audit-log.ndjson`. Then verify the audit ledger.
+Generate `report.md`, `report.pdf`, `question-answer.json`, `question-report.md`, `context-cache.json`, `metrics.json`, `route-health.json`, `slow-segments.geojson`, `recommendations.json`, and `audit-log.ndjson`. Include a Mermaid visualization and then verify the audit ledger.
 
 Expected first-run MCP behavior:
 
 1. The agent calls `clearlane.get_setup_status`.
-2. If configured, it calls `clearlane.audit_route`.
+2. If configured, it calls `clearlane.answer_question` or `clearlane.audit_route`.
 3. If not configured, it tells the user to run `clearlane configure`.
 4. It never asks for API keys in chat or tool parameters.
 5. It may offer a mock audit while live credentials are being set up.
@@ -164,6 +165,8 @@ clearlane configure
 clearlane auth status
 clearlane doctor
 clearlane init --client cursor
+clearlane ask "Why is the M15 slow during weekday AM?" --mock --out ./output
+clearlane ask "What are the top action points for M15 bus reliability?" --out ./output
 clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
 clearlane audit --route M15 --borough Manhattan --period weekday_am --out ./output
 clearlane audit --route M15 --with-evidence ./input/evidence --out ./output
@@ -179,6 +182,7 @@ ClearLane exposes a compact MCP tool surface:
 
 - `clearlane.get_setup_status`: report credential status and next setup command.
 - `clearlane.configure_help`: explain secure local setup without requesting secrets.
+- `clearlane.answer_question`: answer a natural-language transit reliability question using MTA, NYC Open Data, 311, optional evidence, action points, artifacts, and Mermaid.
 - `clearlane.audit_route`: run the audit and generate artifacts, or return `needs_configuration`.
 - `clearlane.analyze_evidence`: analyze local evidence, or return `needs_configuration` for missing vision credentials.
 - `clearlane.generate_report`: regenerate Markdown/PDF reports from artifacts.
@@ -212,6 +216,9 @@ Never paste API keys into MCP chat. ClearLane does not log secrets to `audit-log
 output/
   report.md
   report.pdf
+  question-answer.json
+  question-report.md
+  context-cache.json
   metrics.json
   route-health.json
   slow-segments.geojson

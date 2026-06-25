@@ -2,6 +2,7 @@
 .env.*
 input/
 output/
+output-*/
 .clearlane/cache/
 *.mp4
 *.mov
