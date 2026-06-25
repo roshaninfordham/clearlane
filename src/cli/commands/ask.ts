@@ -44,6 +44,8 @@ export async function runAskCommand(questionParts: string[], options: {
 
   console.log(result.summary);
   console.log("");
+  console.log(result.pitch);
+  console.log("");
   console.log(result.answer);
   console.log("");
   console.log("Action points:");
@@ -52,6 +54,7 @@ export async function runAskCommand(questionParts: string[], options: {
   }
   console.log("");
   console.log(`Question report: ${result.artifacts.questionReportMd}`);
+  console.log(`Question PDF: ${result.artifacts.questionReportPdf}`);
   console.log(`Question JSON: ${result.artifacts.questionAnswerJson}`);
   console.log(`Audit ledger: ${result.artifacts.auditLog}`);
 }

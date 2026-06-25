@@ -86,6 +86,7 @@ export class StreetContextAgent {
       const client = new NycOpenDataClient(appToken, this.config.datasets.nyc311);
       const lanes = await client.queryBusLanes({
         datasetId: this.config.datasets.nycBusLanes,
+        route: options.route,
         ...(options.borough ? { borough: options.borough } : {}),
         limit: 50
       });
@@ -94,6 +95,9 @@ export class StreetContextAgent {
       const busLaneSegmentIds = options.segments
         .filter((segment) => segment.street && lanes.some((lane) => laneMatchesSegment(lane, segment)))
         .map((segment) => segment.segmentId);
+      const busLaneRefs = busLaneSegmentIds.length
+        ? busLaneSegmentIds
+        : lanes.slice(0, 8).map((lane) => lane.id);
       const context = RouteContextSchema.parse({
         route: options.route,
         ...(options.borough ? { borough: options.borough } : {}),
@@ -107,14 +111,14 @@ export class StreetContextAgent {
         action: "fetch_bus_lane_context",
         input_refs: [options.route, options.borough ?? "borough_unspecified"],
         output_refs: lanes.map((lane) => `bus-lane:${lane.id}`),
-        source_refs: [{ ...sourceRef, query: { borough: options.borough, limit: 50 } }],
+        source_refs: [{ ...sourceRef, query: { route: options.route, borough: options.borough, limit: 50 } }],
         claim: `Fetched ${lanes.length} live NYC Open Data bus-lane records for street context.`,
         confidence: 0.68
       });
 
       return {
         routeContext: context,
-        busLaneSegmentIds,
+        busLaneSegmentIds: busLaneRefs,
         busLaneContexts: lanes,
         sourceMode: "available"
       };

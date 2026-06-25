@@ -92,16 +92,22 @@ export class NycOpenDataClient {
 
   async queryBusLanes(options: {
     datasetId: string;
+    route?: string;
     borough?: string;
     limit?: number;
   }): Promise<BusLaneContext[]> {
+    const route = options.route?.toUpperCase().replace(/'/g, "''");
+    const where = route
+      ? `upper(sbs_route1)='${route}' OR upper(sbs_route2)='${route}' OR upper(sbs_route3)='${route}'`
+      : undefined;
     const rows = await this.client.query<Record<string, unknown>>(options.datasetId, {
+      ...(where ? { where } : {}),
       limit: options.limit ?? 25
     });
     const normalized = rows.map((row, index) => normalizeBusLane(row, index));
-    const borough = options.borough?.toUpperCase();
+    const borough = normalizeBorough(options.borough)?.toUpperCase();
     return borough
-      ? normalized.filter((lane) => !lane.borough || lane.borough.toUpperCase() === borough)
+      ? normalized.filter((lane) => !lane.borough || normalizeBorough(lane.borough)?.toUpperCase() === borough)
       : normalized;
   }
 
@@ -131,13 +137,41 @@ function normalizeBusLane(row: Record<string, unknown>, index: number): BusLaneC
   const id = get("objectid", "segmentid", "segment_id", "id", "the_geom") ?? `bus-lane-${index + 1}`;
   const street = get("street", "street_name", "streetname", "roadway", "corridor", "on_street");
   const limits = get("limits", "from_to", "fromstreet", "from_street", "to_street", "to_st");
-  const borough = get("borough", "boro", "borough_name");
+  const borough = normalizeBorough(get("borough", "boro", "borough_name"));
+  const route = get("sbs_route1", "sbs_route2", "sbs_route3");
+  const laneType = get("lane_type1", "lane_type", "lane_type2");
+  const hours = get("hours");
   return {
     id,
-    label: [street, limits].filter(Boolean).join(" - ") || `Bus lane record ${index + 1}`,
+    label:
+      [street, limits, laneType, hours, route ? `Route ${route}` : undefined].filter(Boolean).join(" - ") ||
+      `Bus lane record ${index + 1}`,
     ...(borough ? { borough } : {}),
     ...(street ? { street } : {}),
     ...(limits ? { limits } : {}),
     source: "nyc_open_data_bus_lanes"
   };
+}
+
+function normalizeBorough(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  const normalized = value.trim().toUpperCase();
+  const map: Record<string, string> = {
+    MAN: "Manhattan",
+    MN: "Manhattan",
+    MANHATTAN: "Manhattan",
+    BX: "Bronx",
+    BRONX: "Bronx",
+    BK: "Brooklyn",
+    K: "Brooklyn",
+    BROOKLYN: "Brooklyn",
+    QN: "Queens",
+    Q: "Queens",
+    QUEENS: "Queens",
+    SI: "Staten Island",
+    R: "Staten Island",
+    STATEN_ISLAND: "Staten Island",
+    "STATEN ISLAND": "Staten Island"
+  };
+  return map[normalized] ?? value;
 }

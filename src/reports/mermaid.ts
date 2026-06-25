@@ -35,6 +35,45 @@ export function routeHealthMermaid(routeHealth: RouteHealth): string {
   return `${lines.join("\n")}\n`;
 }
 
+export function questionMermaid(question: string, routeHealth: RouteHealth): string {
+  if (!isEnforcementQuestion(question)) return routeHealthMermaid(routeHealth);
+  const top = routeHealth.bottlenecks[0];
+  const topLabel = top?.segmentId ?? "priority segment";
+  const complaints = routeHealth.metrics.relevant311Complaints;
+  const busLanes = routeHealth.busLaneContexts?.length ?? routeHealth.routeContext.busLanes.length;
+  const vehicles = routeHealth.realtimeSnapshot?.vehicleCount ?? 0;
+  return `flowchart TD
+  q["Question: targeted bus-lane enforcement"]
+  mta["MTA speed data<br/>lowest ${routeHealth.metrics.lowestAvgSpeedMph?.toFixed(1) ?? "n/a"} mph"]
+  realtime["MTA Bus Time<br/>${routeHealth.dataCompleteness.mtaRealtime === "available" ? `${vehicles} live vehicles` : routeHealth.dataCompleteness.mtaRealtime}"]
+  lanes["NYC bus-lane context<br/>${busLanes} records"]
+  complaints["311 curb/traffic signals<br/>${complaints} relevant complaints"]
+  score["ClearLane priority scoring<br/>speed + complaints + lane context + evidence"]
+  target["Targeted review shortlist<br/>${escapeMermaid(topLabel)}"]
+  tech["Camera / technology triage<br/>fixed, bus-mounted, field evidence"]
+  review["Human review + legal eligibility<br/>no face or plate identification by ClearLane"]
+  action["Action plan<br/>deploy, verify, measure before/after"]
+  q --> mta
+  q --> realtime
+  q --> lanes
+  q --> complaints
+  mta --> score
+  realtime --> score
+  lanes --> score
+  complaints --> score
+  score --> target
+  target --> tech
+  tech --> review
+  review --> action
+`;
+}
+
+export function isEnforcementQuestion(question: string): boolean {
+  return /enforcement|enforce|camera|automated|bus lane obstruction|obstruction|parked|parking|nypd|traffic laws/i.test(
+    question
+  );
+}
+
 function escapeMermaid(value: string): string {
   return value.replace(/["<>]/g, "").replace(/\|/g, "/");
 }

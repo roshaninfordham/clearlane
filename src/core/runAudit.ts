@@ -44,7 +44,7 @@ export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
   const logger: Logger = createLogger(Boolean(options.verbose));
   await new CredentialManager().applyToProcessEnv();
   const config = options.config ?? (await loadConfig());
-  const outDir = path.resolve(options.outDir);
+  const outDir = options.outDir;
   const evidenceDir = path.resolve(options.evidenceDir ?? config.evidenceDir);
   await ensureDir(outDir);
   await ensureDir(path.join(outDir, "evidence"));

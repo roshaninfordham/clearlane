@@ -10,7 +10,8 @@ export async function configureHelpTool(): Promise<Record<string, unknown>> {
       "clearlane configure",
       "clearlane auth status",
       "clearlane doctor",
-      "clearlane ask \"Why is the M15 slow during weekday AM?\" --mock --out ./output"
+      "clearlane ask \"Why is the M15 slow during weekday AM?\" --mock --out ./output",
+      "clearlane ask \"Bus speeds are negatively impacted by cars parked in bus lanes and other bus lane obstructions. NYPD has finite resources to enforce traffic laws. How can we use cameras and other technology to conduct more targeted enforcement or automated enforcement?\" --route M15 --borough Manhattan --period weekday_am --out ./demo-output/live-enforcement"
     ],
     recommendedAgentFlow: [
       "Call clearlane.get_setup_status.",

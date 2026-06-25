@@ -131,11 +131,29 @@ describe("natural language questions", () => {
     expect(result.status).toBe("complete");
     if (result.status !== "complete") throw new Error("expected complete answer");
     expect(result.answer).toContain("MTA segment speed data");
+    expect(result.pitch).toContain("audit-ready action plan");
     expect(result.mermaid).toContain("flowchart TD");
     await expect(stat(result.artifacts.questionAnswerJson)).resolves.toBeTruthy();
     await expect(stat(result.artifacts.questionReportMd)).resolves.toBeTruthy();
+    await expect(stat(result.artifacts.questionReportPdf)).resolves.toBeTruthy();
     await expect(stat(result.artifacts.contextCacheJson)).resolves.toBeTruthy();
     expect((await verifyLedgerFile(result.artifacts.auditLog)).ok).toBe(true);
+  });
+
+  it("answers enforcement technology questions with targeted action points", async () => {
+    const dir = await tempDir();
+    const result = await answerQuestion({
+      question:
+        "Bus speeds are negatively impacted by cars parked in bus lanes. How can we use cameras and other technology to conduct more targeted enforcement?",
+      outDir: path.join(dir, "output"),
+      mock: true
+    });
+    expect(result.status).toBe("complete");
+    if (result.status !== "complete") throw new Error("expected complete answer");
+    expect(result.answer).toContain("targeting layer");
+    expect(result.answer).toContain("fixed cameras");
+    expect(result.actionPoints[0]?.action).toContain("priority enforcement-review shortlist");
+    expect(result.mermaid).toContain("Camera / technology triage");
   });
 });
 
