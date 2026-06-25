@@ -1,0 +1,2235 @@
+{
+  "route": "M15",
+  "borough": "Manhattan",
+  "period": "weekday_am",
+  "generatedAt": "2026-06-25T00:57:08.036Z",
+  "segments": [
+    {
+      "segmentId": "M15-S-51-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.089179642891926,
+      "avgTravelTimeMin": 6.77778,
+      "sampleSize": 3,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "direction": "N",
+      "avgSpeedMph": 2.3927896119180825,
+      "avgTravelTimeMin": 3.961902,
+      "sampleSize": 7,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711748,
+        "longitude": -73.992091
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.4687474283880873,
+      "avgTravelTimeMin": 5.760006,
+      "sampleSize": 10,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-60-401731-803054",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "1 AV/E 125 ST",
+      "toStop": "E 126 ST/2 AV",
+      "direction": "N",
+      "avgSpeedMph": 2.578191611741939,
+      "avgTravelTimeMin": 4.43334,
+      "sampleSize": 4,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.931268,
+            40.801611
+          ],
+          [
+            -73.932264,
+            40.80315
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.80238,
+        "longitude": -73.931766
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-60-401731-803054",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "1 AV/E 125 ST",
+      "toStop": "E 126 ST/2 AV",
+      "direction": "N",
+      "avgSpeedMph": 2.641504201447629,
+      "avgTravelTimeMin": 4.32708,
+      "sampleSize": 8,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.931268,
+            40.801611
+          ],
+          [
+            -73.932264,
+            40.80315
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.80238,
+        "longitude": -73.931766
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.6498040756800445,
+      "avgTravelTimeMin": 20.310936,
+      "sampleSize": 32,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.6873739647004866,
+      "avgTravelTimeMin": 20.026986,
+      "sampleSize": 21,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.7206636123295334,
+      "avgTravelTimeMin": 5.226666,
+      "sampleSize": 10,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.7280575539568255,
+      "avgTravelTimeMin": 5.2125,
+      "sampleSize": 12,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.776893589515753,
+      "avgTravelTimeMin": 5.120832,
+      "sampleSize": 12,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.817346076049616,
+      "avgTravelTimeMin": 19.103082,
+      "sampleSize": 27,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8316583260956385,
+      "avgTravelTimeMin": 5.02179,
+      "sampleSize": 13,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8336956521739034,
+      "avgTravelTimeMin": 5.018184,
+      "sampleSize": 11,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8418014097217767,
+      "avgTravelTimeMin": 18.938694,
+      "sampleSize": 28,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8689286368455718,
+      "avgTravelTimeMin": 18.759618,
+      "sampleSize": 26,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8704771027546636,
+      "avgTravelTimeMin": 18.749496,
+      "sampleSize": 33,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.8718506857961716,
+      "avgTravelTimeMin": 4.951512,
+      "sampleSize": 11,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 2.9194203041370677,
+      "avgTravelTimeMin": 4.87083,
+      "sampleSize": 8,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.925294295911655,
+      "avgTravelTimeMin": 18.398148,
+      "sampleSize": 27,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.935122983943537,
+      "avgTravelTimeMin": 18.33654,
+      "sampleSize": 26,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-12-903363-405346",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 96 ST",
+      "toStop": "2 AV/E 78 ST",
+      "direction": "S",
+      "avgSpeedMph": 2.9895849956088028,
+      "avgTravelTimeMin": 17.922222,
+      "sampleSize": 6,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.947274,
+            40.784068
+          ],
+          [
+            -73.955567,
+            40.77276
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.778414,
+        "longitude": -73.95142
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.0181234344892744,
+      "avgTravelTimeMin": 4.711536,
+      "sampleSize": 13,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-31-401698-401704",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "1 AV/E 42 ST",
+      "toStop": "1 AV/E 57 ST",
+      "direction": "N",
+      "avgSpeedMph": 3.029122794849292,
+      "avgTravelTimeMin": 14.994438,
+      "sampleSize": 6,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.969332,
+            40.749251
+          ],
+          [
+            -73.962462,
+            40.758829
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.75404,
+        "longitude": -73.965897
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.0624546931148937,
+      "avgTravelTimeMin": 4.643334,
+      "sampleSize": 10,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.08115237699027,
+      "avgTravelTimeMin": 4.615158,
+      "sampleSize": 11,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1025438428343572,
+      "avgTravelTimeMin": 4.583334,
+      "sampleSize": 14,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1106240279299806,
+      "avgTravelTimeMin": 4.57143,
+      "sampleSize": 14,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-12-903363-405346",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 96 ST",
+      "toStop": "2 AV/E 78 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.113430511906139,
+      "avgTravelTimeMin": 17.209314,
+      "sampleSize": 34,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.947274,
+            40.784068
+          ],
+          [
+            -73.955567,
+            40.77276
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.778414,
+        "longitude": -73.95142
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1367635526604483,
+      "avgTravelTimeMin": 4.533336,
+      "sampleSize": 12,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1422639544183317,
+      "avgTravelTimeMin": 17.12778,
+      "sampleSize": 33,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-24-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1435010973601116,
+      "avgTravelTimeMin": 17.140122,
+      "sampleSize": 27,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1603852017096803,
+      "avgTravelTimeMin": 17.029572,
+      "sampleSize": 31,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "direction": "N",
+      "avgSpeedMph": 3.1776465303988153,
+      "avgTravelTimeMin": 2.983338,
+      "sampleSize": 12,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711748,
+        "longitude": -73.992091
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.1789329244488456,
+      "avgTravelTimeMin": 16.930212,
+      "sampleSize": 32,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.190727414047806,
+      "avgTravelTimeMin": 4.456662,
+      "sampleSize": 15,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.19365374514764,
+      "avgTravelTimeMin": 16.85217,
+      "sampleSize": 23,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-24-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.196220745141535,
+      "avgTravelTimeMin": 16.857408,
+      "sampleSize": 27,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.2222185801133985,
+      "avgTravelTimeMin": 16.702776,
+      "sampleSize": 24,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.246164013464037,
+      "avgTravelTimeMin": 4.380558,
+      "sampleSize": 12,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-29-401768-405610",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 50 ST",
+      "toStop": "2 AV/E 33 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.2626198083067095,
+      "avgTravelTimeMin": 15.649998,
+      "sampleSize": 24,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.968787,
+            40.754623
+          ],
+          [
+            -73.976649,
+            40.743833
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.749228,
+        "longitude": -73.972718
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.2676863744264795,
+      "avgTravelTimeMin": 16.470366,
+      "sampleSize": 27,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.2689655172413685,
+      "avgTravelTimeMin": 4.35,
+      "sampleSize": 11,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-5-401741-903363",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 116 ST",
+      "toStop": "2 AV/E 96 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.282717919565196,
+      "avgTravelTimeMin": 18.25926,
+      "sampleSize": 9,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.93804,
+            40.796723
+          ],
+          [
+            -73.947274,
+            40.784068
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.790396,
+        "longitude": -73.942657
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "direction": "N",
+      "avgSpeedMph": 3.2895919808151297,
+      "avgTravelTimeMin": 2.881818,
+      "sampleSize": 11,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711748,
+        "longitude": -73.992091
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-18-405346-401761",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 78 ST",
+      "toStop": "2 AV/E 68 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.3030927835051536,
+      "avgTravelTimeMin": 9.700002,
+      "sampleSize": 24,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.955567,
+            40.77276
+          ],
+          [
+            -73.960476,
+            40.76599
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.769375,
+        "longitude": -73.958022
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "direction": "N",
+      "avgSpeedMph": 3.3048478073427114,
+      "avgTravelTimeMin": 2.868516,
+      "sampleSize": 9,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711748,
+        "longitude": -73.992091
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "direction": "N",
+      "avgSpeedMph": 3.305059041323697,
+      "avgTravelTimeMin": 2.86833,
+      "sampleSize": 10,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711748,
+        "longitude": -73.992091
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-22-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.3164477292600085,
+      "avgTravelTimeMin": 16.228206,
+      "sampleSize": 26,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "direction": "S",
+      "avgSpeedMph": 3.319839190911754,
+      "avgTravelTimeMin": 4.28334,
+      "sampleSize": 9,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.711481,
+        "longitude": -73.992239
+      },
+      "sourceRefs": []
+    },
+    {
+      "segmentId": "M15-S-23-401761-401768",
+      "route": "M15",
+      "borough": "Manhattan",
+      "fromStop": "2 AV/E 68 ST",
+      "toStop": "2 AV/E 50 ST",
+      "direction": "S",
+      "avgSpeedMph": 3.3360546805970803,
+      "avgTravelTimeMin": 16.13283,
+      "sampleSize": 33,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.960476,
+            40.76599
+          ],
+          [
+            -73.968787,
+            40.754623
+          ]
+        ]
+      },
+      "centroid": {
+        "latitude": 40.760306,
+        "longitude": -73.964631
+      },
+      "sourceRefs": []
+    }
+  ],
+  "bottlenecks": [
+    {
+      "segmentId": "M15-S-51-404844-904920",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "avgSpeedMph": 2.089179642891926,
+      "avgTravelTimeMin": 6.77778,
+      "severity": "critical",
+      "reason": "Average speed of 2.1 mph is below the corridor review threshold.",
+      "confidence": 0.82
+    },
+    {
+      "segmentId": "M15-N-10-405359-404843",
+      "fromStop": "PIKE ST/SOUTH  ST",
+      "toStop": "PIKE ST/MADISON ST",
+      "avgSpeedMph": 2.3927896119180825,
+      "avgTravelTimeMin": 3.961902,
+      "severity": "critical",
+      "reason": "Average speed of 2.4 mph is below the corridor review threshold.",
+      "confidence": 0.82
+    },
+    {
+      "segmentId": "M15-S-52-404844-904920",
+      "fromStop": "PIKE ST/MADISON ST",
+      "toStop": "PIKE ST/SOUTH ST",
+      "avgSpeedMph": 2.4687474283880873,
+      "avgTravelTimeMin": 5.760006,
+      "severity": "critical",
+      "reason": "Average speed of 2.5 mph is below the corridor review threshold.",
+      "confidence": 0.82
+    }
+  ],
+  "routeContext": {
+    "route": "M15",
+    "borough": "Manhattan",
+    "description": "Live bus-lane context fetched from NYC Open Data. 50 candidate bus-lane records were normalized for analyst review.",
+    "busLanes": [
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "1 AVENUE - Bus Lane - 24 Hours - Route M15"
+    ],
+    "busStops": [],
+    "sourceRefs": [
+      {
+        "source": "nyc_open_data_bus_lanes",
+        "datasetId": "ycrg-ses3",
+        "description": "NYC Open Data Bus Lanes",
+        "query": {
+          "borough": "Manhattan",
+          "limit": 50
+        },
+        "timestamp": "2026-06-25T00:57:03.276Z"
+      }
+    ]
+  },
+  "busLaneContexts": [
+    {
+      "id": "0035887",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0035888",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034654",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034656",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033106",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033108",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0165428",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164507",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0165427",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034650",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164517",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164508",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0036073",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0035892",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0035895",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0032897",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033095",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033105",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0036068",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164499",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164500",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033284",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034643",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164495",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0165376",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164494",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033110",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034645",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0032899",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164368",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033123",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0032901",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0033119",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0164957",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0034667",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0032903",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0036661",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0036401",
+      "label": "1 AVENUE - Bus Lane - 7AM - 10 AM, 2PM - 7 PM - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0190827",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0036109",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0165629",
+      "label": "1 AVENUE - Bus Lane - 7AM - 10 AM, 2PM - 7 PM - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0214487",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0214494",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "0214527",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9000990",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9000991",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9001096",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9001098",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9001099",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    },
+    {
+      "id": "9001100",
+      "label": "1 AVENUE - Bus Lane - 24 Hours - Route M15",
+      "borough": "Manhattan",
+      "street": "1 AVENUE",
+      "source": "nyc_open_data_bus_lanes"
+    }
+  ],
+  "complaintHotspots": [
+    {
+      "complaintType": "Illegal Parking",
+      "count": 67728,
+      "latitude": 40.77835756589835,
+      "longitude": -73.96847875997781,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    },
+    {
+      "complaintType": "Street Condition",
+      "count": 16931,
+      "latitude": 40.765294905833,
+      "longitude": -73.97499175314033,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    },
+    {
+      "complaintType": "Blocked Driveway",
+      "count": 4763,
+      "latitude": 40.78028422037511,
+      "longitude": -73.96524889881525,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    },
+    {
+      "complaintType": "Traffic",
+      "count": 2468,
+      "latitude": 40.736498284493464,
+      "longitude": -73.98168552122019,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    },
+    {
+      "complaintType": "Bus Stop Shelter Complaint",
+      "count": 410,
+      "latitude": 40.773482563518314,
+      "longitude": -73.96761534116779,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    },
+    {
+      "complaintType": "Bike/Roller/Skate Chronic",
+      "count": 209,
+      "latitude": 40.76492321479003,
+      "longitude": -73.97404032490036,
+      "dateRange": {
+        "from": "2025-06-25",
+        "to": ""
+      },
+      "source": "nyc_open_data_311"
+    }
+  ],
+  "realtimeSnapshot": {
+    "route": "M15",
+    "fetchedAt": "2026-06-25T00:57:03.274Z",
+    "sourceMode": "available",
+    "vehicleCount": 13,
+    "vehicles": [
+      {
+        "vehicleId": "MTA NYCT_5297",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "1",
+        "latitude": 40.798642,
+        "longitude": -73.936548,
+        "bearing": 233.26129,
+        "progressRate": "normalProgress",
+        "stopPointName": "2 AV/E 119 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5836",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "1",
+        "latitude": 40.772728,
+        "longitude": -73.955488,
+        "bearing": 234.65184,
+        "progressRate": "normalProgress",
+        "stopPointName": "2 AV/E 78 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5957",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.712875,
+        "longitude": -73.992342,
+        "bearing": 98.70409,
+        "progressRate": "normalProgress",
+        "stopPointName": "PIKE ST/MADISON ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5982",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.774547,
+        "longitude": -73.951047,
+        "bearing": 56.432533,
+        "progressRate": "normalProgress",
+        "stopPointName": "1 AV/E 82 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_6111",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.7441,
+        "longitude": -73.973268,
+        "bearing": 53.746162,
+        "progressRate": "normalProgress",
+        "stopPointName": "1 AV/E 34 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_6045",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.722597,
+        "longitude": -73.988634,
+        "bearing": 71.56505,
+        "progressRate": "normalProgress",
+        "stopPointName": "1 AV/E 1 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5878",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.766981,
+        "longitude": -73.956596,
+        "bearing": 52.832336,
+        "progressRate": "normalProgress",
+        "stopPointName": "1 AV/E 72 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5811",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "1",
+        "latitude": 40.742548,
+        "longitude": -73.977514,
+        "bearing": 234.00087,
+        "progressRate": "normalProgress",
+        "stopPointName": "2 AV/E 28 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5870",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "1",
+        "latitude": 40.724738,
+        "longitude": -73.990472,
+        "bearing": 234.13017,
+        "progressRate": "normalProgress",
+        "stopPointName": "EAST HOUSTON ST/FORSYTH ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_6057",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.794669,
+        "longitude": -73.936376,
+        "bearing": 53.262424,
+        "progressRate": "normalProgress",
+        "stopPointName": "1 AV/E 116 ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5978",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.701955,
+        "longitude": -74.01272,
+        "bearing": 104.57422,
+        "progressRate": "noProgress",
+        "stopPointName": "WATER ST/BROAD ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5778",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "0",
+        "latitude": 40.701886,
+        "longitude": -74.0127,
+        "bearing": 108.43495,
+        "progressRate": "noProgress",
+        "stopPointName": "WATER ST/BROAD ST"
+      },
+      {
+        "vehicleId": "MTA NYCT_5281",
+        "lineRef": "MTA NYCT_M15",
+        "directionRef": "1",
+        "latitude": 40.725253,
+        "longitude": -73.9901,
+        "bearing": 234.10982,
+        "progressRate": "normalProgress",
+        "stopPointName": "EAST HOUSTON ST/FORSYTH ST"
+      }
+    ],
+    "sourceRefs": [
+      {
+        "source": "mta_bus_time_vehicle_monitoring",
+        "description": "MTA Bus Time SIRI vehicle monitoring",
+        "url": "https://bustime.mta.info/api/siri/vehicle-monitoring.json",
+        "query": {
+          "route": "M15",
+          "maximumVehicles": 20
+        },
+        "timestamp": "2026-06-25T00:56:55.334Z"
+      }
+    ]
+  },
+  "visionFindings": [],
+  "recommendations": [
+    {
+      "type": "field_verify",
+      "action": "Field-verify PIKE ST/MADISON ST to PIKE ST/SOUTH ST during weekday AM peak.",
+      "reason": "The top segment combines low historical speed with nearby curb and traffic complaint signals.",
+      "evidenceRefs": [
+        "bottleneck:M15-S-51-404844-904920",
+        "segment:M15-S-51-404844-904920"
+      ],
+      "confidence": 0.82,
+      "humanReviewNote": "Confirm field conditions before operational action."
+    },
+    {
+      "type": "review_bus_lane_enforcement",
+      "action": "Review bus-lane and camera enforcement eligibility for the priority segment.",
+      "reason": "Bus-lane context overlaps with at least one slow segment and optional evidence suggests possible blockage.",
+      "evidenceRefs": [
+        "bus-lane:0035887",
+        "bus-lane:0035888",
+        "bus-lane:0034654",
+        "bus-lane:0034656",
+        "bus-lane:0033106",
+        "bus-lane:0033108",
+        "bus-lane:0165428",
+        "bus-lane:0164507"
+      ],
+      "confidence": 0.74,
+      "humanReviewNote": "This is not an enforcement conclusion; eligibility must be checked by authorized staff."
+    },
+    {
+      "type": "evaluate_loading_zone",
+      "action": "Evaluate nearby loading-zone or curb-management changes to reduce recurring curb conflicts.",
+      "reason": "Relevant 311 complaints and optional visual evidence are consistent with curbside activity affecting bus movement.",
+      "evidenceRefs": [
+        "311:Illegal Parking",
+        "311:Street Condition",
+        "311:Blocked Driveway",
+        "311:Traffic",
+        "311:Bus Stop Shelter Complaint",
+        "311:Bike/Roller/Skate Chronic"
+      ],
+      "confidence": 0.71,
+      "humanReviewNote": "Verify signage, land use, and loading demand before recommending curb changes."
+    },
+    {
+      "type": "compare_before_after",
+      "action": "Re-run ClearLane after any intervention to compare before/after segment speeds.",
+      "reason": "A repeatable audit ledger and metrics artifact can support transparent intervention review.",
+      "evidenceRefs": [
+        "metrics.json",
+        "audit-log.ndjson"
+      ],
+      "confidence": 0.86,
+      "humanReviewNote": "Use comparable dates, days of week, and time periods for before/after review."
+    }
+  ],
+  "priorityScores": {
+    "M15-S-51-404844-904920": {
+      "priorityScore": 53.8,
+      "confidence": 0.51,
+      "explanation": "Priority reflects speed (100), nearby relevant 311 complaints (0), bus-lane context (20), and optional vision evidence (15).",
+      "evidenceRefs": [
+        "segment:M15-S-51-404844-904920"
+      ]
+    },
+    "M15-N-10-405359-404843": {
+      "priorityScore": 53.8,
+      "confidence": 0.51,
+      "explanation": "Priority reflects speed (100), nearby relevant 311 complaints (0), bus-lane context (20), and optional vision evidence (15).",
+      "evidenceRefs": [
+        "segment:M15-N-10-405359-404843"
+      ]
+    },
+    "M15-S-52-404844-904920": {
+      "priorityScore": 53.8,
+      "confidence": 0.52,
+      "explanation": "Priority reflects speed (100), nearby relevant 311 complaints (0), bus-lane context (20), and optional vision evidence (15).",
+      "evidenceRefs": [
+        "segment:M15-S-52-404844-904920"
+      ]
+    }
+  },
+  "metrics": {
+    "route": "M15",
+    "period": "weekday_am",
+    "segmentsAnalyzed": 50,
+    "priorityBottlenecks": 3,
+    "lowestAvgSpeedMph": 2.1,
+    "relevant311Complaints": 92509,
+    "visionFindings": 0,
+    "humanReviewRequired": true,
+    "dataCompleteness": {
+      "mtaSegmentSpeeds": "available",
+      "mtaRealtime": "available",
+      "nyc311": "available",
+      "visionEvidence": "skipped"
+    }
+  },
+  "sourceRefs": [
+    {
+      "source": "mta_open_data_segment_speeds",
+      "datasetId": "kufs-yh3x",
+      "description": "MTA Bus Route Segment Speeds",
+      "timestamp": "2026-06-25T00:56:52.684Z"
+    },
+    {
+      "source": "nyc_open_data_bus_lanes",
+      "datasetId": "ycrg-ses3",
+      "description": "NYC Open Data Bus Lanes",
+      "query": {
+        "borough": "Manhattan",
+        "limit": 50
+      },
+      "timestamp": "2026-06-25T00:57:03.276Z"
+    },
+    {
+      "source": "mta_bus_time_vehicle_monitoring",
+      "description": "MTA Bus Time SIRI vehicle monitoring",
+      "url": "https://bustime.mta.info/api/siri/vehicle-monitoring.json",
+      "query": {
+        "route": "M15",
+        "maximumVehicles": 20
+      },
+      "timestamp": "2026-06-25T00:56:55.334Z"
+    },
+    {
+      "source": "nyc_open_data_311",
+      "datasetId": "erm2-nwe9",
+      "timestamp": "2026-06-25T00:57:08.036Z"
+    }
+  ],
+  "audit": {
+    "ledgerPath": "demo-output/live-enforcement/audit-log.ndjson",
+    "finalEventHash": "6de6bf716171d3f468f64a206e408ac91cc2e2942034ab3c51f7c9ec8aaa5655"
+  },
+  "disclaimer": "ClearLane is a decision-support tool. Findings are based on available data and optional visual evidence. They require human review before operational, enforcement, or policy action.",
+  "dataCompleteness": {
+    "mtaSegmentSpeeds": "available",
+    "mtaRealtime": "available",
+    "nyc311": "available",
+    "visionEvidence": "skipped"
+  }
+}

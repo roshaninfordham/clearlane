@@ -1,0 +1,16 @@
+{
+  "route": "M15",
+  "period": "weekday_am",
+  "segmentsAnalyzed": 50,
+  "priorityBottlenecks": 3,
+  "lowestAvgSpeedMph": 2.1,
+  "relevant311Complaints": 92509,
+  "visionFindings": 0,
+  "humanReviewRequired": true,
+  "dataCompleteness": {
+    "mtaSegmentSpeeds": "available",
+    "mtaRealtime": "available",
+    "nyc311": "available",
+    "visionEvidence": "skipped"
+  }
+}

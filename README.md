@@ -13,14 +13,23 @@ ClearLane MCP is an npm-installable CLI and MCP stdio server for civic technolog
 
 ClearLane is not a generic chatbot. It is an MCP-enabled investigation workflow for transit reliability.
 
+## Demo Pitch
+
+ClearLane turns scattered MTA, Bus Time, NYC Open Data, 311, and optional camera evidence into an audit-ready action plan for targeted bus reliability interventions. In a live M15 weekday AM demo, ClearLane can identify critical slow segments, attach complaint and bus-lane context, and produce shareable Markdown/PDF reports plus a JSON audit rail.
+
 ## Package Links
 
 - npm package: [clearlane-mcp](https://www.npmjs.com/package/clearlane-mcp)
 - GitHub repository: [roshaninfordham/clearlane](https://github.com/roshaninfordham/clearlane)
 - Download stats: [npm downloads](https://www.npmjs.com/package/clearlane-mcp)
 - License: [MIT](./LICENSE)
+- Architecture diagram: [docs/architecture.md](./docs/architecture.md)
 
 ## Government Problem
+
+NYC buses serve 1.1M+ daily riders, yet 186 of 332 bus lines received D/F grades for speed, bunching, and on-time performance; MTA also notes buses are slowed by double-parking, delivery vehicles, road closures, and traffic.
+
+Today, analysts manually stitch together MTA data, NYC Open Data, 311 complaints, maps, and field evidence; ClearLane MCP turns those disconnected sources into an audit-ready reliability report with bottlenecks, likely causes, evidence, recommendations, and append-only JSON logs.
 
 Bus speeds and reliability are hurt by traffic, curb conflicts, double parking, blocked stops, delivery activity, and lane encroachment. Agencies often have relevant APIs, open datasets, 311 complaints, field photos, and analyst knowledge, but the evidence is scattered. ClearLane turns that evidence into a single operational report that answers:
 
@@ -101,6 +110,12 @@ clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out
 clearlane ask "What should DOT and MTA review for the M15 weekday AM corridor?" --mock --out ./output
 ```
 
+Live targeted-enforcement demo:
+
+```bash
+clearlane ask "Bus speeds are negatively impacted by cars parked in bus lanes and other bus lane obstructions. NYPD has finite resources to enforce traffic laws. How can we use cameras and other technology to conduct more targeted enforcement or automated enforcement?" --route M15 --borough Manhattan --period weekday_am --out ./demo-output/live-enforcement
+```
+
 Local development:
 
 ```bash
@@ -150,6 +165,15 @@ First check ClearLane setup status. If credentials are missing, do not ask me to
 
 Generate `report.md`, `report.pdf`, `question-answer.json`, `question-report.md`, `context-cache.json`, `metrics.json`, `route-health.json`, `slow-segments.geojson`, `recommendations.json`, and `audit-log.ndjson`. Include a Mermaid visualization and then verify the audit ledger.
 
+Targeted enforcement prompt:
+
+```text
+Use ClearLane to answer this for the M15 weekday AM corridor:
+Bus speeds are negatively impacted by cars parked in bus lanes and other bus lane obstructions. NYPD has finite resources to enforce traffic laws. How can we use cameras and other technology to conduct more targeted enforcement or automated enforcement?
+
+Generate a natural-language answer, action points, Mermaid visualization, Markdown/PDF reports, JSON artifacts, and verify the audit ledger.
+```
+
 Expected first-run MCP behavior:
 
 1. The agent calls `clearlane.get_setup_status`.
@@ -167,6 +191,7 @@ clearlane doctor
 clearlane init --client cursor
 clearlane ask "Why is the M15 slow during weekday AM?" --mock --out ./output
 clearlane ask "What are the top action points for M15 bus reliability?" --out ./output
+clearlane ask "Bus speeds are negatively impacted by cars parked in bus lanes and other bus lane obstructions. NYPD has finite resources to enforce traffic laws. How can we use cameras and other technology to conduct more targeted enforcement or automated enforcement?" --route M15 --borough Manhattan --period weekday_am --out ./demo-output/live-enforcement
 clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
 clearlane audit --route M15 --borough Manhattan --period weekday_am --out ./output
 clearlane audit --route M15 --with-evidence ./input/evidence --out ./output
@@ -218,6 +243,7 @@ output/
   report.pdf
   question-answer.json
   question-report.md
+  question-report.pdf
   context-cache.json
   metrics.json
   route-health.json

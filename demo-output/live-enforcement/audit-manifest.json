@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-25T00:57:08.079Z",
+  "package_name": "clearlane-mcp",
+  "package_version": "0.4.0",
+  "ledger_file": "demo-output/live-enforcement/audit-log.ndjson",
+  "ledger_sha256": "cec62350a51c15d6647bd18fd8e18f31e1fde5fb67b4f783a2a22449a675d077",
+  "final_event_hash": "eee86037ea01da40b545bf9327a29034c9d9fdd450692ac4760a0d005ecbb709",
+  "artifacts": [
+    {
+      "path": "demo-output/live-enforcement/report.md",
+      "sha256": "fdace9633824808deb3c539bf25f540e754c84b1bdbce81b4e64140b6ea4205c"
+    },
+    {
+      "path": "demo-output/live-enforcement/report.pdf",
+      "sha256": "7d2d876f6304f564769699f6d4f504d80d4b9ce8d8c24d0382b7d2cb03eb47f9"
+    },
+    {
+      "path": "demo-output/live-enforcement/metrics.json",
+      "sha256": "3e12855b9824da3842bb03864f4705981db094bf656b4c01f519a242385e73ce"
+    },
+    {
+      "path": "demo-output/live-enforcement/route-health.json",
+      "sha256": "6fd6c173581b8245918292ba658fbded7fb64581abd00e6553a9208663463b3e"
+    },
+    {
+      "path": "demo-output/live-enforcement/slow-segments.geojson",
+      "sha256": "6d5a8d988274be6fb173c149d5ff8986594fc94f295e049809cf1f479718c20e"
+    },
+    {
+      "path": "demo-output/live-enforcement/recommendations.json",
+      "sha256": "b04fc9c9688bf4342818293d509ee0c15f705409e0157554b985906aef547f62"
+    },
+    {
+      "path": "demo-output/live-enforcement/question-answer.json",
+      "sha256": "8d06d4c5871fcbdf28304806a0ff299d0c1180087160b32113980c0cffbc196b"
+    },
+    {
+      "path": "demo-output/live-enforcement/question-report.md",
+      "sha256": "18b3a597435aabc000e6b070a63610b2e4baf0d158fe544a351027d05e63409e"
+    },
+    {
+      "path": "demo-output/live-enforcement/question-report.pdf",
+      "sha256": "92ae8ef39cd221801776e51a0b5fd5342c92cacda7bd443337070de64f8563c1"
+    },
+    {
+      "path": "demo-output/live-enforcement/context-cache.json",
+      "sha256": "6fd6c173581b8245918292ba658fbded7fb64581abd00e6553a9208663463b3e"
+    },
+    {
+      "path": "demo-output/live-enforcement/audit-log.ndjson",
+      "sha256": "cec62350a51c15d6647bd18fd8e18f31e1fde5fb67b4f783a2a22449a675d077"
+    }
+  ]
+}

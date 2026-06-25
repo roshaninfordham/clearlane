@@ -1,0 +1,629 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-51-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.089179642891926,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-N-10-405359-404843",
+        "route": "M15",
+        "from_stop": "PIKE ST/SOUTH  ST",
+        "to_stop": "PIKE ST/MADISON ST",
+        "avg_speed_mph": 2.3927896119180825,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.4687474283880873,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.7206636123295334,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.7280575539568255,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.776893589515753,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.8316583260956385,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.8336956521739034,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.8718506857961716,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 2.9194203041370677,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.0181234344892744,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.0624546931148937,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.08115237699027,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.1025438428343572,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.1106240279299806,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.1367635526604483,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-N-10-405359-404843",
+        "route": "M15",
+        "from_stop": "PIKE ST/SOUTH  ST",
+        "to_stop": "PIKE ST/MADISON ST",
+        "avg_speed_mph": 3.1776465303988153,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.190727414047806,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.246164013464037,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.2689655172413685,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-N-10-405359-404843",
+        "route": "M15",
+        "from_stop": "PIKE ST/SOUTH  ST",
+        "to_stop": "PIKE ST/MADISON ST",
+        "avg_speed_mph": 3.2895919808151297,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-N-10-405359-404843",
+        "route": "M15",
+        "from_stop": "PIKE ST/SOUTH  ST",
+        "to_stop": "PIKE ST/MADISON ST",
+        "avg_speed_mph": 3.3048478073427114,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.991893,
+            40.710615
+          ],
+          [
+            -73.992288,
+            40.71288
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-N-10-405359-404843",
+        "route": "M15",
+        "from_stop": "PIKE ST/SOUTH  ST",
+        "to_stop": "PIKE ST/MADISON ST",
+        "avg_speed_mph": 3.305059041323697,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.992622,
+            40.712625
+          ],
+          [
+            -73.991857,
+            40.710336
+          ]
+        ]
+      },
+      "properties": {
+        "segment_id": "M15-S-52-404844-904920",
+        "route": "M15",
+        "from_stop": "PIKE ST/MADISON ST",
+        "to_stop": "PIKE ST/SOUTH ST",
+        "avg_speed_mph": 3.319839190911754,
+        "severity": "critical",
+        "confidence": 0.82,
+        "geometry_available": true
+      }
+    }
+  ]
+}

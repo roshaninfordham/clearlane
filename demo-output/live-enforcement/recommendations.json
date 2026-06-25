@@ -1,0 +1,56 @@
+[
+  {
+    "type": "field_verify",
+    "action": "Field-verify PIKE ST/MADISON ST to PIKE ST/SOUTH ST during weekday AM peak.",
+    "reason": "The top segment combines low historical speed with nearby curb and traffic complaint signals.",
+    "evidenceRefs": [
+      "bottleneck:M15-S-51-404844-904920",
+      "segment:M15-S-51-404844-904920"
+    ],
+    "confidence": 0.82,
+    "humanReviewNote": "Confirm field conditions before operational action."
+  },
+  {
+    "type": "review_bus_lane_enforcement",
+    "action": "Review bus-lane and camera enforcement eligibility for the priority segment.",
+    "reason": "Bus-lane context overlaps with at least one slow segment and optional evidence suggests possible blockage.",
+    "evidenceRefs": [
+      "bus-lane:0035887",
+      "bus-lane:0035888",
+      "bus-lane:0034654",
+      "bus-lane:0034656",
+      "bus-lane:0033106",
+      "bus-lane:0033108",
+      "bus-lane:0165428",
+      "bus-lane:0164507"
+    ],
+    "confidence": 0.74,
+    "humanReviewNote": "This is not an enforcement conclusion; eligibility must be checked by authorized staff."
+  },
+  {
+    "type": "evaluate_loading_zone",
+    "action": "Evaluate nearby loading-zone or curb-management changes to reduce recurring curb conflicts.",
+    "reason": "Relevant 311 complaints and optional visual evidence are consistent with curbside activity affecting bus movement.",
+    "evidenceRefs": [
+      "311:Illegal Parking",
+      "311:Street Condition",
+      "311:Blocked Driveway",
+      "311:Traffic",
+      "311:Bus Stop Shelter Complaint",
+      "311:Bike/Roller/Skate Chronic"
+    ],
+    "confidence": 0.71,
+    "humanReviewNote": "Verify signage, land use, and loading demand before recommending curb changes."
+  },
+  {
+    "type": "compare_before_after",
+    "action": "Re-run ClearLane after any intervention to compare before/after segment speeds.",
+    "reason": "A repeatable audit ledger and metrics artifact can support transparent intervention review.",
+    "evidenceRefs": [
+      "metrics.json",
+      "audit-log.ndjson"
+    ],
+    "confidence": 0.86,
+    "humanReviewNote": "Use comparable dates, days of week, and time periods for before/after review."
+  }
+]
