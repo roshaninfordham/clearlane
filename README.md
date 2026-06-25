@@ -26,14 +26,14 @@ npm run build
 Or use the package through `npx` after publishing:
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client cursor
+npx clearlane-mcp init --client cursor
 ```
 
 ## Quickstart
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client cursor
-npx @roshanclearlane/clearlane-mcp audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
+npx clearlane-mcp init --client cursor
+npx clearlane-mcp audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
 ```
 
 Local development:
@@ -50,25 +50,25 @@ node dist/cli/index.js verify-ledger ./output/audit-log.ndjson
 Cursor:
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client cursor
+npx clearlane-mcp init --client cursor
 ```
 
 Codex:
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client codex
+npx clearlane-mcp init --client codex
 ```
 
 OpenCode:
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client opencode
+npx clearlane-mcp init --client opencode
 ```
 
 All clients:
 
 ```bash
-npx @roshanclearlane/clearlane-mcp init --client all
+npx clearlane-mcp init --client all
 ```
 
 Local MCP configs use:
@@ -148,7 +148,7 @@ Mock M15 output includes 12 segments analyzed, 3 priority bottlenecks, 5.8 mph l
 - Live public dataset schemas may change; ClearLane uses schema-flexible adapters and falls back to mock data when needed.
 - Geo matching is intentionally lightweight for hackathon use.
 - Vision evidence is decision support only and requires human review.
-- The package is published under the maintainer-owned `@roshanclearlane` npm scope.
+- The package is published as `clearlane-mcp` on npm.
 
 ## Publishing
 

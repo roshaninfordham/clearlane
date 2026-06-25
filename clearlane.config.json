@@ -1,5 +1,5 @@
 {
-  "packageName": "@roshanclearlane/clearlane-mcp",
+  "packageName": "clearlane-mcp",
   "outputDir": "./output",
   "inputDir": "./input",
   "evidenceDir": "./input/evidence",

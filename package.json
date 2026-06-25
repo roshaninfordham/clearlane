@@ -1,5 +1,5 @@
 {
-  "name": "@roshanclearlane/clearlane-mcp",
+  "name": "clearlane-mcp",
   "version": "0.1.0",
   "description": "Audit-ready bus reliability investigations from MTA, NYC Open Data, 311, and optional vision evidence.",
   "type": "module",
