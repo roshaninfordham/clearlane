@@ -33,21 +33,71 @@ Every ClearLane run writes `audit-log.ndjson`, an append-only ledger where each 
 ## Installation
 
 ```bash
-npm install
-npm run build
+npm install -g clearlane-mcp
 ```
 
-Or use the package through `npx` after publishing:
+Or use it without a global install:
 
 ```bash
 npx clearlane-mcp init --client cursor
+```
+
+Local development from this repo:
+
+```bash
+npm install
+npm run build
+node dist/cli/index.js doctor
+```
+
+## First-Time Setup
+
+ClearLane never asks you to paste API keys into Cursor, Codex, OpenCode, or any MCP chat transcript. Configure credentials locally:
+
+```bash
+clearlane configure
+```
+
+You can skip keys you do not have. ClearLane can still run in mock mode.
+
+Supported credentials:
+
+```bash
+MTA_API_KEY=
+NYC_OPEN_DATA_APP_TOKEN=
+OPENAI_API_KEY=
+NY511_API_KEY=
+```
+
+Credential resolution order:
+
+1. Process environment variables.
+2. ClearLane local credential file in `~/.clearlane/`.
+3. Project `.env.local`, only after explicit `clearlane configure --project-env`.
+4. Missing.
+
+The local credential fallback uses owner-only file permissions where supported. Values are never printed by `doctor`, `auth status`, MCP tools, reports, or audit logs.
+
+Check setup:
+
+```bash
+clearlane auth status
+clearlane auth status --json
+clearlane doctor
 ```
 
 ## Quickstart
 
 ```bash
-npx clearlane-mcp init --client cursor
-npx clearlane-mcp audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
+clearlane init --client cursor
+clearlane configure
+clearlane audit --route M15 --borough Manhattan --period weekday_am --out ./output
+```
+
+Demo mode works with zero API keys:
+
+```bash
+clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
 ```
 
 Local development:
@@ -64,25 +114,25 @@ node dist/cli/index.js verify-ledger ./output/audit-log.ndjson
 Cursor:
 
 ```bash
-npx clearlane-mcp init --client cursor
+clearlane init --client cursor
 ```
 
 Codex:
 
 ```bash
-npx clearlane-mcp init --client codex
+clearlane init --client codex
 ```
 
 OpenCode:
 
 ```bash
-npx clearlane-mcp init --client opencode
+clearlane init --client opencode
 ```
 
 All clients:
 
 ```bash
-npx clearlane-mcp init --client all
+clearlane init --client all
 ```
 
 Local MCP configs use:
@@ -93,34 +143,68 @@ node ./dist/mcp/server.js
 
 ## MCP Prompt Example
 
-Use ClearLane to audit the M15 route for weekday AM reliability. Use mock mode if live APIs are unavailable. Generate the report and verify the audit ledger.
+Use ClearLane MCP to audit the M15 bus route for weekday AM reliability.
+
+First check ClearLane setup status. If credentials are missing, do not ask me to paste keys here. Tell me to run `clearlane configure` in my terminal. If I do not have keys yet, run the audit in mock mode.
+
+Generate `report.md`, `report.pdf`, `metrics.json`, `route-health.json`, `slow-segments.geojson`, `recommendations.json`, and `audit-log.ndjson`. Then verify the audit ledger.
+
+Expected first-run MCP behavior:
+
+1. The agent calls `clearlane.get_setup_status`.
+2. If configured, it calls `clearlane.audit_route`.
+3. If not configured, it tells the user to run `clearlane configure`.
+4. It never asks for API keys in chat or tool parameters.
+5. It may offer a mock audit while live credentials are being set up.
 
 ## CLI Examples
 
 ```bash
+clearlane configure
+clearlane auth status
 clearlane doctor
+clearlane init --client cursor
 clearlane audit --route M15 --borough Manhattan --period weekday_am --mock --out ./output
+clearlane audit --route M15 --borough Manhattan --period weekday_am --out ./output
+clearlane audit --route M15 --with-evidence ./input/evidence --out ./output
 clearlane analyze-evidence ./input/evidence --out ./output --mock
 clearlane report --from ./output/route-health.json --out ./output
 clearlane verify-ledger ./output/audit-log.ndjson
 clearlane inspect-source --dataset kufs-yh3x --limit 5
 ```
 
-## Environment Variables
+## MCP Tools
 
-```bash
-OPENAI_API_KEY=
-MTA_API_KEY=
-NYC_OPEN_DATA_APP_TOKEN=
+ClearLane exposes a compact MCP tool surface:
+
+- `clearlane.get_setup_status`: report credential status and next setup command.
+- `clearlane.configure_help`: explain secure local setup without requesting secrets.
+- `clearlane.audit_route`: run the audit and generate artifacts, or return `needs_configuration`.
+- `clearlane.analyze_evidence`: analyze local evidence, or return `needs_configuration` for missing vision credentials.
+- `clearlane.generate_report`: regenerate Markdown/PDF reports from artifacts.
+- `clearlane.verify_ledger`: verify the audit hash chain.
+- `clearlane.doctor`: return setup diagnostics without secret values.
+
+If live credentials are missing and `mock` is not set, MCP tools return a structured result like:
+
+```json
+{
+  "status": "needs_configuration",
+  "summary": "ClearLane needs local credentials for live transit/open-data queries.",
+  "nextStep": "Ask the user to run `clearlane configure` in their terminal, or rerun this tool with mock=true."
+}
 ```
 
-Behavior:
+## Credential Safety
 
-- Missing `MTA_API_KEY`: real-time MTA Bus Time calls are skipped.
-- Missing `NYC_OPEN_DATA_APP_TOKEN`: anonymous Socrata requests still work, but may be throttled.
-- Missing `OPENAI_API_KEY`: optional vision analysis is skipped unless `--mock` is used.
+Acceptable credential flows:
 
-`clearlane doctor` reports presence only and never prints secret values.
+- Environment variables.
+- `clearlane configure` local credential storage.
+- Explicit project `.env.local` with `clearlane configure --project-env`.
+- Mock mode.
+
+Never paste API keys into MCP chat. ClearLane does not log secrets to `audit-log.ndjson`, reports, metrics, MCP responses, or console status output.
 
 ## Output Artifacts
 

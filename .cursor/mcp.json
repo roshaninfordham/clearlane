@@ -1,9 +1,9 @@
 {
   "mcpServers": {
     "clearlane": {
-      "command": "node",
+      "command": "clearlane",
       "args": [
-        "./dist/mcp/server.js"
+        "mcp"
       ]
     }
   }

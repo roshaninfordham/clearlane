@@ -4,8 +4,8 @@
     "clearlane": {
       "type": "local",
       "command": [
-        "node",
-        "./dist/mcp/server.js"
+        "clearlane",
+        "mcp"
       ],
       "enabled": true
     }
