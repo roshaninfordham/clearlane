@@ -1,10 +1,24 @@
 # ClearLane MCP
 
+[![npm version](https://img.shields.io/npm/v/clearlane-mcp.svg)](https://www.npmjs.com/package/clearlane-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/clearlane-mcp.svg)](https://www.npmjs.com/package/clearlane-mcp)
+[![License: MIT](https://img.shields.io/npm/l/clearlane-mcp.svg)](./LICENSE)
+[![Node.js >=20](https://img.shields.io/node/v/clearlane-mcp.svg)](https://www.npmjs.com/package/clearlane-mcp)
+[![CI](https://github.com/roshaninfordham/clearlane/actions/workflows/ci.yml/badge.svg)](https://github.com/roshaninfordham/clearlane/actions/workflows/ci.yml)
+[![GitHub repo](https://img.shields.io/badge/GitHub-roshaninfordham%2Fclearlane-181717?logo=github)](https://github.com/roshaninfordham/clearlane)
+
 Audit-ready bus reliability investigations from MTA + NYC Open Data + optional vision evidence.
 
 ClearLane MCP is an npm-installable CLI and MCP stdio server for civic technologists, agency analysts, and hackathon teams investigating slow NYC bus corridors. It combines MTA route speed data, NYC Open Data, 311 complaints, optional image/video evidence, transparent scoring, and an append-only hash-chained audit ledger.
 
 ClearLane is not a generic chatbot. It is an MCP-enabled investigation workflow for transit reliability.
+
+## Package Links
+
+- npm package: [clearlane-mcp](https://www.npmjs.com/package/clearlane-mcp)
+- GitHub repository: [roshaninfordham/clearlane](https://github.com/roshaninfordham/clearlane)
+- Download stats: [npm downloads](https://www.npmjs.com/package/clearlane-mcp)
+- License: [MIT](./LICENSE)
 
 ## Government Problem
 
