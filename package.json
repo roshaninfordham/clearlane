@@ -1,6 +1,6 @@
 {
   "name": "clearlane-mcp",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Audit-ready bus reliability investigations from MTA, NYC Open Data, 311, and optional vision evidence.",
   "type": "module",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "README.md",
     "LICENSE",
     "CHANGELOG.md",
+    "SECURITY.md",
     "examples"
   ],
   "engines": {

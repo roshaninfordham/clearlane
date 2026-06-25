@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0
+
+- Add secure first-run credential setup with `clearlane configure`.
+- Add `clearlane auth status` and MCP setup/status/help tools.
+- Return structured `needs_configuration` results instead of requesting secrets in chat.
+- Configure MCP clients to use the global `clearlane mcp` command by default.
+
 ## 0.1.2
 
 - Align CLI and MCP server runtime version with the published npm package version.
