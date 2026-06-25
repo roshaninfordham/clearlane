@@ -2,6 +2,7 @@
 import "dotenv/config";
 import { Command } from "commander";
 import { runAnalyzeEvidenceCommand } from "./commands/analyzeEvidence.js";
+import { runAskCommand } from "./commands/ask.js";
 import { runAuthStatusCommand } from "./commands/authStatus.js";
 import { runAuditCommand } from "./commands/audit.js";
 import { runConfigureCommand } from "./commands/configure.js";
@@ -59,6 +60,21 @@ program
   .command("mcp")
   .description("Start the ClearLane MCP stdio server.")
   .action(runMcpCommand);
+
+program
+  .command("ask")
+  .description("Answer a natural-language transit reliability question with auditable artifacts.")
+  .argument("<question...>", "Natural-language question to answer")
+  .option("--route <route>", "Route ID, for example M15")
+  .option("--borough <borough>", "Borough")
+  .option("--period <period>", "weekday_am, weekday_pm, midday, evening, weekend, or all")
+  .option("--date-from <dateFrom>", "YYYY-MM-DD")
+  .option("--date-to <dateTo>", "YYYY-MM-DD")
+  .option("--out <dir>", "Output directory", "./output")
+  .option("--with-evidence <dir>", "Evidence directory")
+  .option("--mock", "Use mock/demo data")
+  .option("--json", "Print machine-readable JSON")
+  .action(runAskCommand);
 
 program
   .command("audit")

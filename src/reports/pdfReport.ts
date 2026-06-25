@@ -39,6 +39,14 @@ export async function writePdfReport(routeHealth: RouteHealth, outputPath: strin
       ["Vision evidence findings", routeHealth.metrics.visionFindings]
     ].forEach(([label, value]) => doc.fontSize(10).text(`${label}: ${value}`));
 
+    section(doc, "Live and Street Context");
+    doc
+      .fontSize(10)
+      .text(
+        `MTA Bus Time: ${routeHealth.realtimeSnapshot?.sourceMode ?? routeHealth.dataCompleteness.mtaRealtime}${routeHealth.realtimeSnapshot?.sourceMode === "available" ? ` (${routeHealth.realtimeSnapshot.vehicleCount} vehicle records)` : ""}`
+      );
+    doc.text(`Bus lane context records: ${routeHealth.busLaneContexts?.length ?? routeHealth.routeContext.busLanes.length}`);
+
     section(doc, "Top Bottlenecks");
     routeHealth.bottlenecks.forEach((bottleneck, index) => {
       doc

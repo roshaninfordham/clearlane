@@ -20,9 +20,10 @@ export async function getRouteContextTool(input: z.infer<typeof GetRouteContextI
     ...(input.borough ? { borough: input.borough } : {}),
     mock: input.mock
   });
-  return new StreetContextAgent(ledger).run({
+  return new StreetContextAgent(config, ledger, createLogger(false)).run({
     route: input.route,
     ...(input.borough ? { borough: input.borough } : {}),
-    segments: routeData.segments
+    segments: routeData.segments,
+    mock: input.mock
   });
 }

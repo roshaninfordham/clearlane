@@ -1,4 +1,5 @@
 import { AuditManifest } from "../audit/schemas.js";
+import { routeHealthMermaid } from "./mermaid.js";
 import { RouteHealth } from "./reportSchemas.js";
 
 export function markdownReport(routeHealth: RouteHealth, manifest?: AuditManifest): string {
@@ -30,6 +31,12 @@ ${routeHealth.disclaimer}
 | Relevant 311 complaints nearby | ${metrics.relevant311Complaints} |
 | Vision evidence findings | ${metrics.visionFindings} |
 
+## Corridor Signal Map
+
+\`\`\`mermaid
+${routeHealthMermaid(routeHealth).trim()}
+\`\`\`
+
 ## Top Bottlenecks
 
 ${bottlenecks
@@ -58,6 +65,26 @@ ${routeHealth.sourceRefs
       `- ${source.source}${source.datasetId ? ` (${source.datasetId})` : ""}: ${source.description ?? "source record"}`
   )
   .join("\n")}
+
+### Real-Time MTA Bus Time
+
+${
+  routeHealth.realtimeSnapshot?.sourceMode === "available"
+    ? `- Vehicle records fetched: ${routeHealth.realtimeSnapshot.vehicleCount}
+- Snapshot time: ${routeHealth.realtimeSnapshot.fetchedAt}`
+    : `- Status: ${routeHealth.dataCompleteness.mtaRealtime}`
+}
+
+### Bus Lane Context
+
+${
+  routeHealth.busLaneContexts?.length
+    ? routeHealth.busLaneContexts
+        .slice(0, 10)
+        .map((lane) => `- ${lane.label}${lane.borough ? ` (${lane.borough})` : ""}`)
+        .join("\n")
+    : "- No bus-lane context records were attached."
+}
 
 ### 311 Complaint Hotspots
 

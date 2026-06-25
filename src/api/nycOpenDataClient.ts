@@ -13,6 +13,15 @@ export type ComplaintHotspot = {
   source: "nyc_open_data_311" | "mock";
 };
 
+export type BusLaneContext = {
+  id: string;
+  label: string;
+  borough?: string;
+  street?: string;
+  limits?: string;
+  source: "nyc_open_data_bus_lanes" | "mock";
+};
+
 type RawComplaintRow = {
   complaint_type?: string;
   complaintType?: string;
@@ -81,6 +90,21 @@ export class NycOpenDataClient {
     });
   }
 
+  async queryBusLanes(options: {
+    datasetId: string;
+    borough?: string;
+    limit?: number;
+  }): Promise<BusLaneContext[]> {
+    const rows = await this.client.query<Record<string, unknown>>(options.datasetId, {
+      limit: options.limit ?? 25
+    });
+    const normalized = rows.map((row, index) => normalizeBusLane(row, index));
+    const borough = options.borough?.toUpperCase();
+    return borough
+      ? normalized.filter((lane) => !lane.borough || lane.borough.toUpperCase() === borough)
+      : normalized;
+  }
+
   async inspectDataset(datasetId: string, limit = 5): Promise<Record<string, unknown>[]> {
     return this.client.query<Record<string, unknown>>(datasetId, { limit });
   }
@@ -93,4 +117,27 @@ function numberValue(value: unknown): number | undefined {
     if (Number.isFinite(parsed)) return parsed;
   }
   return undefined;
+}
+
+function normalizeBusLane(row: Record<string, unknown>, index: number): BusLaneContext {
+  const get = (...keys: string[]): string | undefined => {
+    for (const key of keys) {
+      const value = row[key];
+      if (typeof value === "string" && value.trim()) return value.trim();
+      if (typeof value === "number" && Number.isFinite(value)) return String(value);
+    }
+    return undefined;
+  };
+  const id = get("objectid", "segmentid", "segment_id", "id", "the_geom") ?? `bus-lane-${index + 1}`;
+  const street = get("street", "street_name", "streetname", "roadway", "corridor", "on_street");
+  const limits = get("limits", "from_to", "fromstreet", "from_street", "to_street", "to_st");
+  const borough = get("borough", "boro", "borough_name");
+  return {
+    id,
+    label: [street, limits].filter(Boolean).join(" - ") || `Bus lane record ${index + 1}`,
+    ...(borough ? { borough } : {}),
+    ...(street ? { street } : {}),
+    ...(limits ? { limits } : {}),
+    source: "nyc_open_data_bus_lanes"
+  };
 }

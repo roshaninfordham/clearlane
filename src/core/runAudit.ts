@@ -6,6 +6,7 @@ import { RouteDataAgent } from "../agents/routeDataAgent.js";
 import { SpeedBottleneckAgent } from "../agents/speedBottleneckAgent.js";
 import { StreetContextAgent } from "../agents/streetContextAgent.js";
 import { VisionEvidenceAgent } from "../agents/visionEvidenceAgent.js";
+import { MtaBusTimeClient } from "../api/mtaBusTimeClient.js";
 import { AuditLedger } from "../audit/ledger.js";
 import { verifyLedgerFile } from "../audit/verify.js";
 import { ArtifactPaths } from "../schemas/artifacts.js";
@@ -63,13 +64,34 @@ export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
   const routeData = await new RouteDataAgent(config, ledger, logger).run({
     route: options.route,
     ...(options.borough ? { borough: options.borough } : {}),
+    period: options.period,
     mock: options.mock
   });
   const bottlenecks = await new SpeedBottleneckAgent(ledger).run(routeData.segments);
-  const streetContext = await new StreetContextAgent(ledger).run({
+  const realtimeSnapshot = await new MtaBusTimeClient(
+    options.mock ? undefined : process.env[config.dataSources.mtaBusTime.apiKeyEnv]
+  ).getVehicleSnapshot(options.route);
+  await ledger.append({
+    actor: "RouteDataAgent",
+    action: "fetch_mta_realtime_vehicle_snapshot",
+    input_refs: [options.route],
+    output_refs: [`vehicles:${realtimeSnapshot.vehicleCount}`],
+    source_refs: realtimeSnapshot.sourceRefs,
+    claim:
+      realtimeSnapshot.sourceMode === "available"
+        ? `Fetched ${realtimeSnapshot.vehicleCount} real-time MTA Bus Time vehicle records.`
+        : "MTA Bus Time real-time vehicle snapshot was unavailable or skipped.",
+    confidence: realtimeSnapshot.sourceMode === "available" ? 0.72 : 0.4,
+    metadata: {
+      sourceMode: realtimeSnapshot.sourceMode,
+      error: realtimeSnapshot.error
+    }
+  });
+  const streetContext = await new StreetContextAgent(config, ledger, logger).run({
     route: options.route,
     ...(options.borough ? { borough: options.borough } : {}),
-    segments: routeData.segments
+    segments: routeData.segments,
+    mock: options.mock
   });
   const complaints = await new ComplaintHotspotAgent(config, ledger, logger).run({
     ...(options.borough ? { borough: options.borough } : {}),
@@ -92,7 +114,12 @@ export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
 
   const dataCompleteness: DataCompleteness = {
     mtaSegmentSpeeds: routeData.sourceMode,
-    mtaRealtime: process.env[config.dataSources.mtaBusTime.apiKeyEnv] ? "available" : "unavailable",
+    mtaRealtime:
+      realtimeSnapshot.sourceMode === "available"
+        ? "available"
+        : realtimeSnapshot.sourceMode === "skipped"
+          ? "skipped"
+          : "unavailable",
     nyc311: complaints.sourceMode,
     visionEvidence: vision.sourceMode
   };
@@ -119,7 +146,9 @@ export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
     segments: routeData.segments,
     bottlenecks,
     routeContext: streetContext.routeContext,
+    busLaneContexts: streetContext.busLaneContexts,
     complaintHotspots: complaints.hotspots,
+    realtimeSnapshot,
     visionFindings: vision.findings,
     recommendations: recommendationResult.recommendations,
     priorityScores: recommendationResult.priorityScores,
@@ -127,6 +156,7 @@ export async function runAudit(options: AuditOptions): Promise<AuditRunResult> {
     sourceRefs: [
       ...routeData.sourceRefs,
       ...streetContext.routeContext.sourceRefs,
+      ...realtimeSnapshot.sourceRefs,
       {
         source: complaints.sourceMode === "mock" ? "mock_311_hotspots" : "nyc_open_data_311",
         datasetId: config.datasets.nyc311,

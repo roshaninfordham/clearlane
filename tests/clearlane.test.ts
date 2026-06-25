@@ -13,7 +13,9 @@ import { loadConfig } from "../src/core/config.js";
 import { VisionEvidenceAgent } from "../src/agents/visionEvidenceAgent.js";
 import { CredentialManager } from "../src/credentials/credentialManager.js";
 import { auditRouteTool } from "../src/mcp/tools/auditRoute.js";
+import { answerQuestionTool } from "../src/mcp/tools/answerQuestion.js";
 import { createMcpServer } from "../src/mcp/server.js";
+import { answerQuestion } from "../src/core/answerQuestion.js";
 
 const originalCwd = process.cwd();
 const originalEnv = { ...process.env };
@@ -99,17 +101,40 @@ describe("mock audit", () => {
 
     const report = await readFile(result.artifacts.reportMd, "utf8");
     expect(report).toContain("ClearLane Bus Reliability Audit");
+    expect(report).toContain("```mermaid");
     expect(report).toContain("Human Review Checklist");
     const metrics = JSON.parse(await readFile(result.artifacts.metricsJson, "utf8")) as {
       segmentsAnalyzed: number;
       priorityBottlenecks: number;
       relevant311Complaints: number;
       visionFindings: number;
+      dataCompleteness: { mtaRealtime: string };
     };
     expect(metrics.segmentsAnalyzed).toBe(12);
     expect(metrics.priorityBottlenecks).toBe(3);
     expect(metrics.relevant311Complaints).toBe(42);
     expect(metrics.visionFindings).toBe(2);
+    expect(metrics.dataCompleteness.mtaRealtime).toBe("skipped");
+    expect((await verifyLedgerFile(result.artifacts.auditLog)).ok).toBe(true);
+  });
+});
+
+describe("natural language questions", () => {
+  it("answers a mock route question with Mermaid and auditable artifacts", async () => {
+    const dir = await tempDir();
+    const outDir = path.join(dir, "output");
+    const result = await answerQuestion({
+      question: "Why is the M15 slow during weekday morning reliability?",
+      outDir,
+      mock: true
+    });
+    expect(result.status).toBe("complete");
+    if (result.status !== "complete") throw new Error("expected complete answer");
+    expect(result.answer).toContain("MTA segment speed data");
+    expect(result.mermaid).toContain("flowchart TD");
+    await expect(stat(result.artifacts.questionAnswerJson)).resolves.toBeTruthy();
+    await expect(stat(result.artifacts.questionReportMd)).resolves.toBeTruthy();
+    await expect(stat(result.artifacts.contextCacheJson)).resolves.toBeTruthy();
     expect((await verifyLedgerFile(result.artifacts.auditLog)).ok).toBe(true);
   });
 });
@@ -221,6 +246,19 @@ describe("mcp setup flow", () => {
       mock: false
     });
     expect(result.status).toBe("needs_configuration");
+    expect(JSON.stringify(result)).toContain("clearlane configure");
+  });
+
+  it("returns needs_configuration for natural-language questions when live credentials are missing", async () => {
+    process.env.CLEARLANE_HOME = await tempDir();
+    delete process.env.MTA_API_KEY;
+    delete process.env.NYC_OPEN_DATA_APP_TOKEN;
+    const result = await answerQuestionTool({
+      question: "Analyze the M15 route for weekday AM reliability",
+      outDir: "./output",
+      mock: false
+    });
+    expect((result as { status: string }).status).toBe("needs_configuration");
     expect(JSON.stringify(result)).toContain("clearlane configure");
   });
 

@@ -1,4 +1,6 @@
 import { ComplaintHotspot } from "../api/nycOpenDataClient.js";
+import { BusLaneContext } from "../api/nycOpenDataClient.js";
+import { RealtimeBusSnapshot } from "../api/mtaBusTimeClient.js";
 import { DataCompleteness, Period, SourceRef } from "../schemas/common.js";
 import { Metrics } from "../schemas/metrics.js";
 import { Recommendation } from "../schemas/recommendation.js";
@@ -14,7 +16,9 @@ export type RouteHealth = {
   segments: SegmentSpeed[];
   bottlenecks: Bottleneck[];
   routeContext: RouteContext;
+  busLaneContexts?: BusLaneContext[];
   complaintHotspots: ComplaintHotspot[];
+  realtimeSnapshot?: RealtimeBusSnapshot;
   visionFindings: VisionFinding[];
   recommendations: Recommendation[];
   priorityScores: Record<string, PriorityScore>;

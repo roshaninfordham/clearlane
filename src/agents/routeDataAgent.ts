@@ -3,7 +3,7 @@ import { MtaOpenDataClient } from "../api/mtaOpenDataClient.js";
 import { AuditLedger } from "../audit/ledger.js";
 import { ClearLaneConfig } from "../core/config.js";
 import { Logger } from "../core/logger.js";
-import { nowIso, SourceRef } from "../schemas/common.js";
+import { nowIso, Period, SourceRef } from "../schemas/common.js";
 import { SegmentSpeed, SegmentSpeedSchema } from "../schemas/route.js";
 
 export type RouteDataResult = {
@@ -21,7 +21,7 @@ export class RouteDataAgent {
     private readonly logger: Logger
   ) {}
 
-  async run(options: { route: string; borough?: string; mock: boolean }): Promise<RouteDataResult> {
+  async run(options: { route: string; borough?: string; period?: Period; mock: boolean }): Promise<RouteDataResult> {
     const sourceRef: SourceRef = {
       source: "mta_open_data_segment_speeds",
       datasetId: this.config.datasets.mtaSegmentSpeeds,
@@ -33,13 +33,13 @@ export class RouteDataAgent {
       try {
         const appToken = process.env[this.config.dataSources.nycOpenData.appTokenEnv];
         const client = new MtaOpenDataClient(appToken, this.config.datasets.mtaSegmentSpeeds);
-        const segments = await client.getSegmentSpeeds(options.route, 50);
+        const segments = await client.getSegmentSpeeds(options.route, 50, options.period);
         await this.ledger.append({
           actor: "RouteDataAgent",
           action: "fetch_mta_segment_speeds",
           input_refs: [options.route],
           output_refs: [`segments:${segments.length}`],
-          source_refs: [{ ...sourceRef, query: { route: options.route, limit: 50 } }],
+          source_refs: [{ ...sourceRef, query: { route: options.route, period: options.period, limit: 50 } }],
           claim: `Fetched ${segments.length} segment speed rows from MTA Open Data.`,
           confidence: segments.length > 0 ? 0.8 : 0.3
         });
