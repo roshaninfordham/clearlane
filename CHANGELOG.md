@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0
+
+- Add enforcement/camera-specific natural-language answers for targeted bus-lane obstruction questions.
+- Generate `question-report.pdf` with a rendered flowchart diagram alongside `question-report.md`, `question-answer.json`, and the audit ledger.
+- Add a GitHub Mermaid architecture diagram in `docs/architecture.md`.
+- Add the NYC bus reliability problem statement and demo pitch language to repository docs.
+- Improve live NYC bus-lane API queries by route and borough, including M15 bus-lane context.
+- Default live natural-language questions to a trailing one-year 311 complaint window when no dates are provided.
+- Keep relative output paths when users pass relative output directories, making reports easier to share.
+- Add a live demo artifact folder under `demo-output/live-enforcement`.
+
 ## 0.3.0
 
 - Add `clearlane ask` and MCP `clearlane.answer_question` for natural-language transit reliability questions.
