@@ -17,6 +17,67 @@ ClearLane is not a generic chatbot. It is an MCP-enabled investigation workflow 
 
 ClearLane turns scattered MTA, Bus Time, NYC Open Data, 311, and optional camera evidence into an audit-ready action plan for targeted bus reliability interventions. In a live M15 weekday AM demo, ClearLane can identify critical slow segments, attach complaint and bus-lane context, and produce shareable Markdown/PDF reports plus a JSON audit rail.
 
+## System Architecture
+
+```mermaid
+flowchart TD
+  user["Analyst asks a natural-language question"]
+  agent["Cursor / Codex / OpenCode / MCP client"]
+  setup["clearlane.get_setup_status"]
+  configure["Local secure setup<br/>clearlane configure"]
+  answer["clearlane.answer_question<br/>or CLI: clearlane ask"]
+  audit["ClearLane audit pipeline"]
+  mta["MTA Open Data<br/>segment speeds"]
+  bustime["MTA Bus Time<br/>live vehicles"]
+  nyc311["NYC Open Data 311<br/>complaints"]
+  lanes["NYC Open Data<br/>bus lanes"]
+  evidence["Optional image/video evidence"]
+  score["Scoring + recommendations"]
+  outputs["Reports + JSON artifacts"]
+  ledger["append-only JSON audit rail<br/>audit-log.ndjson"]
+
+  user --> agent
+  agent --> setup
+  setup -->|"missing keys"| configure
+  configure --> answer
+  setup -->|"configured or mock"| answer
+  answer --> audit
+  audit --> mta
+  audit --> bustime
+  audit --> nyc311
+  audit --> lanes
+  audit --> evidence
+  mta --> score
+  bustime --> score
+  nyc311 --> score
+  lanes --> score
+  evidence --> score
+  score --> outputs
+  outputs --> ledger
+```
+
+## Output Flow
+
+```mermaid
+flowchart LR
+  question["Question"]
+  data["Live/mock data sources"]
+  report["question-report.md<br/>question-report.pdf"]
+  json["question-answer.json<br/>route-health.json<br/>metrics.json"]
+  geo["slow-segments.geojson"]
+  audit["audit-log.ndjson<br/>audit-manifest.json"]
+  team["Share with team<br/>review actions"]
+
+  question --> data
+  data --> report
+  data --> json
+  data --> geo
+  report --> team
+  json --> audit
+  geo --> audit
+  audit --> team
+```
+
 ## Package Links
 
 - npm package: [clearlane-mcp](https://www.npmjs.com/package/clearlane-mcp)
@@ -101,6 +162,72 @@ clearlane doctor
 clearlane init --client cursor
 clearlane configure
 clearlane ask "Why is the M15 slow during weekday AM reliability?" --out ./output
+```
+
+## New User Flow
+
+Install globally:
+
+```bash
+npm install -g clearlane-mcp
+```
+
+Then these should work:
+
+```bash
+clearlane --version
+clearlane auth status
+clearlane doctor
+clearlane init --client opencode
+```
+
+Example verified output from a macOS zsh shell:
+
+```text
+clearlane -> /Users/rs/.npm-global/bin/clearlane
+version -> 0.4.1
+MTA_API_KEY -> present via local-file
+NYC_OPEN_DATA_APP_TOKEN -> present via local-file
+```
+
+If `clearlane` says `command not found`, add npm's global bin directory to your shell:
+
+```bash
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+For OpenCode:
+
+```bash
+clearlane init --client opencode
+```
+
+Restart OpenCode, then ask your ClearLane prompt. Or run directly:
+
+```bash
+clearlane ask "Bus speeds are negatively impacted by cars parked in bus lanes and other bus lane obstructions. NYPD has finite resources to enforce traffic laws. How can we use cameras and other technology to conduct more targeted enforcement or automated enforcement?" \
+  --route M15 \
+  --borough Manhattan \
+  --period weekday_am \
+  --out ./demo-output/live-enforcement
+```
+
+See outputs here:
+
+```text
+demo-output/live-enforcement/
+  question-report.md
+  question-report.pdf
+  question-answer.json
+  audit-log.ndjson
+  audit-manifest.json
+  metrics.json
+  route-health.json
+  slow-segments.geojson
+  recommendations.json
+  report.md
+  report.pdf
 ```
 
 Demo mode works with zero API keys:

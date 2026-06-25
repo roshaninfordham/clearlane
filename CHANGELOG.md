@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1
+
+- Add system architecture and output-flow Mermaid diagrams directly to the GitHub README landing page.
+- Add a new-user setup flow with global install, `auth status`, `doctor`, OpenCode init, demo prompt, and output folder examples.
+- Document the macOS/zsh npm-global PATH fix for `clearlane: command not found`.
+- Ignore generated `.bak.*` config backup files.
+
 ## 0.4.0
 
 - Add enforcement/camera-specific natural-language answers for targeted bus-lane obstruction questions.

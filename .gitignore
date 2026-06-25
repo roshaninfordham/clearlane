@@ -9,6 +9,7 @@ output-*/
 *.avi
 *.mkv
 *.log
+*.bak.*
 .DS_Store
 node_modules/
 coverage/
