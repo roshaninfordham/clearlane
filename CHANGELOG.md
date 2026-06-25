@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.3
+
+- Replace Mermaid diagrams in the npm/GitHub README landing page with static SVG architecture images so npm renders visuals instead of plain flowchart source.
+- Keep Mermaid source in the architecture docs and generated reports for MCP clients and GitHub-compatible viewers.
+- Add packaged SVG diagram assets under `docs/assets/`.
+
 ## 0.4.2
 
 - Add `clearlane-mcp` as a CLI alias for the existing `clearlane` command.

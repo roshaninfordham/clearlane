@@ -19,64 +19,11 @@ ClearLane turns scattered MTA, Bus Time, NYC Open Data, 311, and optional camera
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-  user["Analyst asks a natural-language question"]
-  agent["Cursor / Codex / OpenCode / MCP client"]
-  setup["clearlane.get_setup_status"]
-  configure["Local secure setup<br/>clearlane configure"]
-  answer["clearlane.answer_question<br/>or CLI: clearlane ask"]
-  audit["ClearLane audit pipeline"]
-  mta["MTA Open Data<br/>segment speeds"]
-  bustime["MTA Bus Time<br/>live vehicles"]
-  nyc311["NYC Open Data 311<br/>complaints"]
-  lanes["NYC Open Data<br/>bus lanes"]
-  evidence["Optional image/video evidence"]
-  score["Scoring + recommendations"]
-  outputs["Reports + JSON artifacts"]
-  ledger["append-only JSON audit rail<br/>audit-log.ndjson"]
-
-  user --> agent
-  agent --> setup
-  setup -->|"missing keys"| configure
-  configure --> answer
-  setup -->|"configured or mock"| answer
-  answer --> audit
-  audit --> mta
-  audit --> bustime
-  audit --> nyc311
-  audit --> lanes
-  audit --> evidence
-  mta --> score
-  bustime --> score
-  nyc311 --> score
-  lanes --> score
-  evidence --> score
-  score --> outputs
-  outputs --> ledger
-```
+![ClearLane MCP system architecture](https://raw.githubusercontent.com/roshaninfordham/clearlane/main/docs/assets/system-architecture.svg)
 
 ## Output Flow
 
-```mermaid
-flowchart LR
-  question["Question"]
-  data["Live/mock data sources"]
-  report["question-report.md<br/>question-report.pdf"]
-  json["question-answer.json<br/>route-health.json<br/>metrics.json"]
-  geo["slow-segments.geojson"]
-  audit["audit-log.ndjson<br/>audit-manifest.json"]
-  team["Share with team<br/>review actions"]
-
-  question --> data
-  data --> report
-  data --> json
-  data --> geo
-  report --> team
-  json --> audit
-  geo --> audit
-  audit --> team
-```
+![ClearLane MCP output flow](https://raw.githubusercontent.com/roshaninfordham/clearlane/main/docs/assets/output-flow.svg)
 
 ## Package Links
 
@@ -85,6 +32,7 @@ flowchart LR
 - Download stats: [npm downloads](https://www.npmjs.com/package/clearlane-mcp)
 - License: [MIT](./LICENSE)
 - Architecture diagram: [docs/architecture.md](./docs/architecture.md)
+- Rendered architecture SVG: [docs/assets/system-architecture.svg](./docs/assets/system-architecture.svg)
 
 ## Government Problem
 

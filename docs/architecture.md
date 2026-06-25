@@ -4,6 +4,14 @@ NYC buses serve 1.1M+ daily riders, yet 186 of 332 bus lines received D/F grades
 
 Today, analysts manually stitch together MTA data, NYC Open Data, 311 complaints, maps, and field evidence; ClearLane MCP turns those disconnected sources into an audit-ready reliability report with bottlenecks, likely causes, evidence, recommendations, and append-only JSON logs.
 
+![ClearLane MCP system architecture](./assets/system-architecture.svg)
+
+![ClearLane MCP output flow](./assets/output-flow.svg)
+
+## Mermaid Source
+
+GitHub renders this diagram natively. The npm package page uses the static SVGs above because npm currently displays Mermaid source as plain text.
+
 ```mermaid
 flowchart TD
   user["Analyst asks natural-language question"]

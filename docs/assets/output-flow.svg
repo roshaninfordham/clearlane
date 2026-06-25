@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="430" viewBox="0 0 1180 430" role="img" aria-labelledby="title desc">
+  <title id="title">ClearLane MCP output flow</title>
+  <desc id="desc">A flow diagram showing a question and data sources producing Markdown and PDF reports, JSON artifacts, GeoJSON, an audit ledger, and a team review package.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0f766e" />
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 28px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px Arial, Helvetica, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #9fb3c8; stroke-width: 1.4; }
+      .source { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; }
+      .report { fill: #f0fdf4; stroke: #16a34a; stroke-width: 1.5; }
+      .audit { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.5; }
+      .team { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.5; }
+      .label { font: 700 15px Arial, Helvetica, sans-serif; fill: #111827; }
+      .small { font: 400 12px Arial, Helvetica, sans-serif; fill: #475569; }
+      .arrow { stroke: #0f766e; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .arrow-soft { stroke: #94a3b8; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1180" height="430" />
+  <text class="title" x="42" y="48">ClearLane Output Flow</text>
+  <text class="subtitle" x="42" y="74">Every run produces human-readable reports and machine-readable artifacts that can be reviewed, shared, and verified.</text>
+
+  <rect class="box" x="45" y="165" width="145" height="90" rx="9" />
+  <text class="label" x="84" y="197">Question</text>
+  <text class="small" x="75" y="221">natural-language</text>
+  <text class="small" x="91" y="239">prompt</text>
+
+  <rect class="source" x="245" y="150" width="175" height="120" rx="9" />
+  <text class="label" x="292" y="181">Data</text>
+  <text class="small" x="286" y="205">MTA speeds</text>
+  <text class="small" x="283" y="224">Bus Time</text>
+  <text class="small" x="284" y="243">311 + lanes</text>
+
+  <rect class="report" x="485" y="96" width="180" height="94" rx="9" />
+  <text class="label" x="539" y="127">Reports</text>
+  <text class="small" x="525" y="151">question-report.md</text>
+  <text class="small" x="525" y="169">question-report.pdf</text>
+
+  <rect class="report" x="485" y="240" width="180" height="100" rx="9" />
+  <text class="label" x="519" y="272">JSON + GeoJSON</text>
+  <text class="small" x="523" y="295">question-answer.json</text>
+  <text class="small" x="525" y="313">slow-segments.geojson</text>
+
+  <rect class="audit" x="735" y="160" width="180" height="100" rx="9" />
+  <text class="label" x="782" y="192">Audit Rail</text>
+  <text class="small" x="774" y="216">audit-log.ndjson</text>
+  <text class="small" x="766" y="234">audit-manifest.json</text>
+
+  <rect class="team" x="985" y="150" width="150" height="120" rx="9" />
+  <text class="label" x="1030" y="181">Team</text>
+  <text class="small" x="1023" y="205">review actions</text>
+  <text class="small" x="1018" y="224">share report</text>
+  <text class="small" x="1011" y="243">verify evidence</text>
+
+  <path class="arrow" d="M190 210 L237 210" />
+  <path class="arrow" d="M420 205 C452 205 450 143 477 143" />
+  <path class="arrow" d="M420 215 C452 215 450 290 477 290" />
+  <path class="arrow" d="M665 143 C700 143 700 190 727 190" />
+  <path class="arrow-soft" d="M665 290 C700 290 700 230 727 230" />
+  <path class="arrow" d="M915 210 L977 210" />
+  <path class="arrow-soft" d="M665 143 C825 85 990 95 1058 143" />
+  <path class="arrow-soft" d="M665 290 C820 350 990 335 1058 277" />
+
+  <text class="small" x="45" y="384">Demo output folder: demo-output/live-enforcement/ contains reports, JSON artifacts, GeoJSON, and the verifiable append-only audit ledger.</text>
+</svg>
