@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0
+
+- Add `clearlane ask` and MCP `clearlane.answer_question` for natural-language transit reliability questions.
+- Generate `question-answer.json`, `question-report.md`, `context-cache.json`, and Mermaid visual summaries.
+- Fetch MTA Bus Time real-time vehicle snapshots and include them in route-health reports.
+- Normalize live NY State MTA segment-speed fields, including `average_road_speed`, stop names, sample sizes, and geometry.
+- Add best-effort live NYC Open Data bus-lane context and safer generated-output ignore rules.
+
 ## 0.2.0
 
 - Add secure first-run credential setup with `clearlane configure`.
